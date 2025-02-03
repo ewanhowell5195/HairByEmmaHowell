@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div id="page">
     <nav>
       <ul>
         <li><router-link to="/">Home</router-link></li>
@@ -20,5 +20,11 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+  }
+
+  #page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 </style>

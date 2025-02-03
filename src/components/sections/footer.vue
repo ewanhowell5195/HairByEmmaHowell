@@ -1,5 +1,4 @@
 <template>
-  <div class="spacer"></div>
   <footer>
     <div class="container">
       <div id="footer-upper">
@@ -20,7 +19,7 @@
       <div id="footer-socials">
         <a href="https://www.facebook.com/profile.php?id=61559965659213" class="fa fa-facebook-f" target="_blank"></a>
         <a href="https://www.instagram.com/hairby_emmahowell_/" class="fa fa-instagram" style="font-size: 24px;" target="_blank"></a>
-        <a href="https://search.google.com/local/reviews?placeid=ChIJq2s3JgB3dkgRrXynpIf2-fo" class="fa fa-google" target="_blank"></a>
+        <a :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" class="fa fa-google" target="_blank"></a>
       </div>
       <p id="footer-copyright">&copy; {{ new Date().getFullYear() }} Hair by Emma Howell. All rights reserved.</p>
     </div>

@@ -1,4 +1,5 @@
-<script>
+<script setup>
+  import Reviews from "../sections/reviews.vue"
 </script>
 
 <template>
@@ -6,5 +7,5 @@
     <h1>Welcome to the Home Page</h1>
     <p>This is the home page content.</p>
   </div>
-  <img src="/assets/images/logo/logo.webp" style="max-width: 100%;">
+  <Reviews />
 </template>
