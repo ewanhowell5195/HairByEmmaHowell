@@ -1,6 +1,99 @@
-import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
+import { defineConfig } from "vite"
+import path from "node:path"
+import fs from "node:fs"
+
+const getFiles = async function*(dir) {
+  const dirents = await fs.promises.readdir(dir, { withFileTypes: true })
+  for (const dirent of dirents) {
+    const res = path.resolve(dir, dirent.name)
+    if (dirent.isDirectory()) {
+      yield* getFiles(res)
+    } else {
+      yield res
+    }
+  }
+}
 
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [
+    vue(),
+    {
+      name: "build-finished-hook",
+      closeBundle() {
+        console.log("Build finished. Running custom post-build function...")
+        return buildOpenGraph()
+      }
+    }
+  ]
 })
+
+function loadVueFile(filePath) {
+  const match = fs.readFileSync(filePath, "utf-8").match(/export default\s*({[\s\S]*?})/)
+  if (!match) {
+    return {}
+  }
+  try {
+    return new Function(`return ${match[1]}`)()
+  } catch (error) {
+    console.error(`Error parsing export default in ${filePath}:`, error)
+    return null
+  }
+}
+
+const defaults = {
+  title: "Hair by Emma Howell",
+  colour: "#D9D9D9",
+  description: "Hairdresser with 15 years experience, based in Row Town.",
+  image: "logo/logo.webp"
+}
+
+async function buildOpenGraph() {
+  console.log("Building open graph data…")
+
+  for await (const f of getFiles("./src/components/pages")) {
+    const file = path.relative("./src/components/pages", f)
+    if (file === "index.vue") {
+      continue
+    }
+    console.log(`Processing: ${file}`)
+    const data = loadVueFile(f)
+
+    let id = path.basename(f, ".vue")
+    if (id === "index") {
+      id = path.basename(path.dirname(f))
+    }
+
+    const title = data.title ?? id.replace(/([a-z0-9])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())
+
+    const html = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>${title ? `${title} | ${defaults.title}` : defaults.title}</title>
+    <link rel="icon" type="image/webp" sizes="16x16" href="/assets/images/logo/logo_16.webp">
+    <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/logo/logo_32.webp">
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="${data.colour ?? defaults.colour}">
+    <meta name="description" content="${data.description ?? defaults.description}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${title ? `${title} | ${defaults.title}` : defaults.title}">
+    <meta property="og:description" content="${data.description ?? defaults.description}">
+    <meta property="og:image" content="https://hairbyemmahowell.co.uk/assets/images/${data.image ?? defaults.image}">
+  </head>
+</html>`
+    
+    const fileName = path.basename(file, ".vue")
+    const outDir = path.join("dist", path.dirname(file))
+    let outputPath
+    if (fileName === "index") {
+      outputPath = path.join(outDir, "index.html")
+    } else {
+      outputPath = path.join(outDir, fileName, "index.html")
+    }
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true })
+    fs.writeFileSync(outputPath, html)
+  }
+
+  console.log("Built open graph data")
+}
