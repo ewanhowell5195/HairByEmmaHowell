@@ -67,20 +67,20 @@ async function buildOpenGraph() {
       id = path.basename(path.dirname(f))
     }
 
-    const title = data.title ?? id.replace(/([a-z0-9])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())
+    const title = (data.title ?? id.replace(/([a-z0-9])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())) + " | " + defaults.title
 
     const html = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>${title ? `${title} | ${defaults.title}` : defaults.title}</title>
+    <title>${title}</title>
     <link rel="icon" type="image/webp" sizes="16x16" href="/assets/images/logo/logo_16.webp">
     <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/logo/logo_32.webp">
     <meta name="viewport" content="width=device-width">
     <meta name="theme-color" content="${data.colour ?? defaults.colour}">
     <meta name="description" content="${data.description ?? defaults.description}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="${title ? `${title} | ${defaults.title}` : defaults.title}">
+    <meta property="og:title" content="${title}">
     <meta property="og:description" content="${data.description ?? defaults.description}">
     <meta property="og:image" content="https://hairbyemmahowell.co.uk/assets/images/${data.image ?? defaults.image}">
 ${files}
