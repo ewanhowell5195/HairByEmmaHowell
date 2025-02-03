@@ -81,6 +81,10 @@ async function buildOpenGraph() {
     <meta property="og:description" content="${data.description ?? defaults.description}">
     <meta property="og:image" content="https://hairbyemmahowell.co.uk/assets/images/${data.image ?? defaults.image}">
   </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>`
     
     const fileName = path.basename(file, ".vue")
