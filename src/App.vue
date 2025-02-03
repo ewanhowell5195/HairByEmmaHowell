@@ -1,3 +1,7 @@
+<script setup>
+  import Footer from "./components/sections/footer.vue"
+</script>
+
 <template>
   <div>
     <nav>
@@ -8,4 +12,13 @@
     </nav>
     <router-view />
   </div>
+  <Footer />
 </template>
+
+<style>
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+</style>

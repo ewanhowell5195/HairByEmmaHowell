@@ -83,6 +83,7 @@ async function buildOpenGraph() {
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${data.description ?? defaults.description}">
     <meta property="og:image" content="https://hairbyemmahowell.co.uk/assets/images/${data.image ?? defaults.image}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" />
 ${files}
   </head>
   <body>
