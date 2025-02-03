@@ -51,6 +51,9 @@ const defaults = {
 async function buildOpenGraph() {
   console.log("Building open graph data…")
 
+  const main = fs.readFileSync("./dist/index.html","utf-8")
+  const files = main.match(/<head>([\s\S]*?)<\/head>/)[1].trim().split("\n").slice(-2).join("\n")
+
   for await (const f of getFiles("./src/components/pages")) {
     const file = path.relative("./src/components/pages", f)
     if (file === "index.vue") {
@@ -80,10 +83,10 @@ async function buildOpenGraph() {
     <meta property="og:title" content="${title ? `${title} | ${defaults.title}` : defaults.title}">
     <meta property="og:description" content="${data.description ?? defaults.description}">
     <meta property="og:image" content="https://hairbyemmahowell.co.uk/assets/images/${data.image ?? defaults.image}">
+${files}
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>`
     
