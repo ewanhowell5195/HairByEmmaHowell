@@ -4,6 +4,11 @@
   import reviews from "@/assets/json/reviews.json"
   import Splide from "@splidejs/splide"
 
+  // for (const review of reviews) {
+  //   delete review.image2
+  //   delete review.image2
+  // }
+
   const componentId = Math.random()
   const splide = ref(null)
 
@@ -59,6 +64,8 @@
 
   .review-content {
     font-weight: 600;
+    white-space: pre-wrap;
+    flex: 1;
   }
 
   h2 {
@@ -98,7 +105,6 @@
   }
 
   .review-images {
-    flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 128px;
@@ -109,6 +115,7 @@
       width: 100%;
       height: 100%;
       border-radius: 12px;
+      overflow: hidden;
     }
   }
 
@@ -134,6 +141,20 @@
   @media (max-width: 768px) {
     .splide__slide {
       width: 100%;
+    }
+
+    .avatar, .avatar-fallback {
+      width: 48px;
+      height: 48px;
+      font-size: 32px;
+    }
+
+    .review-user {
+      gap: 8px;
+    }
+
+    .review-user-details :first-child {
+      font-size: 20px;
     }
   }
 </style>
