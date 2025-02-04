@@ -112,6 +112,15 @@
     }
   }
 
+  .popup-image {
+    max-width: calc(100vw - 80px);
+    max-height: calc(100dvh - 80px);
+    display: block;
+    background-image: var(--transparency);
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
+
   .icon {
     box-sizing: initial;
     color: #fff;
