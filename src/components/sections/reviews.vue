@@ -124,4 +124,16 @@
   .review-images-3 :last-child {
     grid-column: span 2;
   }
+
+  @media (max-width: 1024px) {
+    .splide__slide {
+      width: calc(50% - 24px / 2);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .splide__slide {
+      width: 100%;
+    }
+  }
 </style>
