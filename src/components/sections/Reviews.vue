@@ -4,13 +4,18 @@
   import reviews from "@/assets/json/reviews.json"
   import Splide from "@splidejs/splide"
 
-  // for (const review of reviews) {
-  //   delete review.image2
-  //   delete review.image2
-  // }
-
   const componentId = Math.random()
   const splide = ref(null)
+
+  function formatDate(str) {
+    let date
+    if (/^\d{2}\/\d{2}\/\d{2,4}$/.test(str)) {
+      date = new Date(str.split("/").reverse().join("-"))
+    } else {
+      date = new Date(str)
+    }
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
+  }
 
   onMounted(() => {
     new Splide(splide.value, {
@@ -35,7 +40,7 @@
               <i v-else class="avatar-fallback icon">person</i>
               <div class="review-user-details">
                 <div>{{ review.name }}</div>
-                <div>{{ review.subtext }}</div>
+                <div>{{ formatDate(review.date) }}</div>
               </div>
             </div>
             <div :class="['review-images', `review-images-${['image1', 'image2', 'image3', 'image4'].filter(key => review[key]).length}`, `review-image-rows-${reviews.some(r => ['image1', 'image2', 'image3', 'image4'].filter(key => r[key]).length === 3) ? 2 : 1}`]">
