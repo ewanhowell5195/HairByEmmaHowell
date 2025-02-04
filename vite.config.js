@@ -18,15 +18,13 @@ const getFiles = async function*(dir) {
 export default defineConfig({
   plugins: [
     vue(),
-    // {
-    //   name: "build-finished-hook",
-    //   async closeBundle() {
-    //     // console.log("Build finished. Running custom post-build function...")
-    //     // console.log(fs.readdirSync("./"))
-    //     // console.log(fs.readdirSync("./dist"))
-    //     // return buildOpenGraph()
-    //   }
-    // }
+    {
+      name: "build-finished-hook",
+      async closeBundle() {
+        console.log("Build finished. Running custom post-build function...")
+        return buildOpenGraph()
+      }
+    }
   ],
   resolve: {
     alias: {
