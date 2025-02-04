@@ -28,7 +28,10 @@
 
 <template>
   <section class="container">
-    <h1>Customer Reviews</h1>
+    <div class="review-row">
+      <h1>Customer Reviews</h1>
+      <a class="button" :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" target="_blank">Write a review <i class="icon">edit</i></a>
+    </div>
     <div ref="splide" class="splide pagination-below">
       <div class="splide__track">
         <ul class="splide__list">
@@ -57,8 +60,14 @@
 </template>
 
 <style scoped>
+  .review-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
   .splide__slide {
-    width: calc(33% - 24px * 2 / 3);
+    width: calc(100% / 3 - 24px * 2 / 3);
     border-radius: 16px;
     background-color: #fff;
     padding: 16px 24px 24px;

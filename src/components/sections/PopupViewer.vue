@@ -113,8 +113,8 @@
   }
 
   .popup-image {
-    max-width: calc(100vw - 80px);
-    max-height: calc(100dvh - 80px);
+    max-width: calc(100vw - 92px * 2);
+    max-height: calc(100dvh - 92px * 2);
     display: block;
     background-image: var(--transparency);
     image-rendering: pixelated;
@@ -122,13 +122,11 @@
   }
 
   .icon {
-    box-sizing: initial;
     color: #fff;
-    padding: 10px;
     position: absolute;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     font-size: 40px;
     background-color: #0006;
     transition: background-color .15s ease, box-shadow .15s ease;
@@ -152,9 +150,44 @@
 
   #popup-image-prev {
     left: 16px;
+    font-size: 48px;
   }
 
   #popup-image-next {
     right: 16px;
+    font-size: 48px;
+  }
+
+  @media (max-width: 768px) {
+    .popup-image {
+      max-width: calc(100vw - 56px * 2);
+      max-height: calc(100dvh - 56px * 2);
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+    }
+
+    #popup-image-close, #popup-image-open {
+      top: 8px;
+      right: 8px;
+    }
+
+    #popup-image-open {
+      right: 56px;
+      font-size: 22px;
+    }
+
+    #popup-image-prev {
+      left: 8px;
+      font-size: 32px;
+    }
+
+    #popup-image-next {
+      right: 8px;
+      font-size: 32px;
+    }
   }
 </style>

@@ -85,6 +85,26 @@ h2 {
   font-size: 40px;
 }
 
+button, .button {
+  all: unset;
+  background-color: var(--color-accent);
+  color: #fff;
+  display: flex;
+  font-size: 20px;
+  border-radius: 12px;
+  padding: 12px 24px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  user-select: none;
+  cursor: pointer;
+
+  .icon {
+    font-size: 22px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     margin: 30px auto 50px;
