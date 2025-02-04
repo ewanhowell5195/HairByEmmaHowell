@@ -20,8 +20,9 @@ export default defineConfig({
     vue(),
     {
       name: "build-finished-hook",
-      closeBundle() {
+      async closeBundle() {
         console.log("Build finished. Running custom post-build function...")
+        await new Promise(resolve => setTimeout(resolve, 500))
         return buildOpenGraph()
       }
     }
