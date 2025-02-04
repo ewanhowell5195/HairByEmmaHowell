@@ -79,12 +79,8 @@
     a {
       font-size: 20px;
       border: 1px solid #fff;
-      border-radius: 50%;
       width: 40px;
       height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
   }
 

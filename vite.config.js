@@ -25,7 +25,12 @@ export default defineConfig({
         return buildOpenGraph()
       }
     }
-  ]
+  ],
+  resolve: {
+    alias: {
+      "@": "/src"
+    }
+  }
 })
 
 function loadVueFile(filePath) {

@@ -9,7 +9,5 @@ const app = createApp(App)
 app.config.globalProperties.$settings = settings
 window.$settings = settings
 
-app.config.globalProperties.$reviews = reactive({ data: null })
-
 app.use(router)
 app.mount("#app")
