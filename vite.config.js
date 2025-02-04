@@ -22,7 +22,8 @@ export default defineConfig({
       name: "build-finished-hook",
       async closeBundle() {
         console.log("Build finished. Running custom post-build function...")
-        await new Promise(resolve => setTimeout(resolve, 500))
+        console.log(fs.readdirSync("./"))
+        console.log(fs.readdirSync("./dist"))
         return buildOpenGraph()
       }
     }
