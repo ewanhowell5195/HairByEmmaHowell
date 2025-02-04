@@ -22,9 +22,9 @@ export default defineConfig({
       name: "build-finished-hook",
       async closeBundle() {
         console.log("Build finished. Running custom post-build function...")
-        console.log(fs.readdirSync("./"))
-        console.log(fs.readdirSync("./dist"))
-        return buildOpenGraph()
+        // console.log(fs.readdirSync("./"))
+        // console.log(fs.readdirSync("./dist"))
+        // return buildOpenGraph()
       }
     }
   ],
