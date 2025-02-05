@@ -6,11 +6,13 @@
   --color-background: #D9D9D9;
   --content-width: 1280px;
   --box-shadow: 0 2px 6px 2px #0004;
+  --font: Nunito, Arial, serif;
+  --font-heading: "Rouge Script", Arial, serif;
   --transparency: url("data:image/webp;base64,UklGRiYAAABXRUJQVlA4TBkAAAAvD8ADAAWRto2Te5h/fYXnEf2fgDj+cfwDAA==");
 }
 
 * {
-  font-family: Nunito, Arial, serif;
+  font-family: var(--font);
   line-height: normal;
   box-sizing: border-box;
   font-size: 16px;
@@ -74,7 +76,7 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: "Rouge Script", Arial, serif;
+  font-family: var(--font-heading);
 }
 
 h1 {
@@ -99,6 +101,7 @@ button, .button {
   gap: 8px;
   user-select: none;
   cursor: pointer;
+  line-height: 1;
 
   .icon {
     font-size: 22px;

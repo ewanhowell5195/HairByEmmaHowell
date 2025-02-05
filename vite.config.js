@@ -48,7 +48,7 @@ function loadVueFile(filePath) {
 
 const defaults = {
   title: "Hair by Emma Howell",
-  colour: "#D9D9D9",
+  colour: "#2C2D2A",
   description: "Hairdresser with 15 years experience, based in Row Town.",
   image: "logo/logo.webp"
 }
@@ -79,8 +79,8 @@ async function buildOpenGraph() {
   <head>
     <meta charset="UTF-8" />
     <title>${title}</title>
-    <link rel="icon" type="image/webp" sizes="16x16" href="/assets/images/logo/logo_16.webp">
-    <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/logo/logo_32.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="/assets/images/logo/favicon_16.webp">
+    <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/logo/favicon_32.webp">
     <meta name="viewport" content="width=device-width">
     <meta name="theme-color" content="${data.colour ?? defaults.colour}">
     <meta name="description" content="${data.description ?? defaults.description}">
@@ -89,6 +89,7 @@ async function buildOpenGraph() {
     <meta property="og:description" content="${data.description ?? defaults.description}">
     <meta property="og:image" content="https://hairbyemmahowell.co.uk/assets/images/${data.image ?? defaults.image}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1" />
 ${files}
   </head>
   <body>

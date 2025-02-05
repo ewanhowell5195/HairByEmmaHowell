@@ -1,0 +1,121 @@
+<script setup>
+  import { ref, onMounted, onUnmounted } from "vue"
+
+  const isScrolled = ref(false)
+
+  function handleScroll() {
+    isScrolled.value = window.scrollY > 0
+  }
+
+  onMounted(() => {
+    window.addEventListener("scroll", handleScroll)
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener("scroll", handleScroll)
+  })
+</script>
+
+<template>
+  <header :class="{ scrolled: isScrolled }">
+    <div class="container">
+      <router-link to="/" id="header-logo-link">
+        <img src="/assets/images/logo/transparent.webp" width="64" height="64">
+        <img src="/assets/images/logo/transparent_light.webp" width="64" height="64">
+        <span>Hair by Emma Howell</span>
+      </router-link>
+      <nav>
+        <router-link to="/hairdressing">Hairdressing</router-link>
+        <router-link to="/bridalhair">Bridal Hair</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/contact">Contact</router-link>
+      </nav>
+    </div>
+  </header>
+</template>
+
+<style scoped>
+  header {
+    background-color: var(--color-background);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: background-color .25s ease;
+
+    * {
+      color: #000;
+      transition: color .25s ease;
+    }
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 24px;
+    flex-direction: row;
+    align-items: center;
+    max-width: initial;
+    gap: 32px;
+    justify-content: space-between;
+  }
+
+  #header-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 16px;
+
+    img {
+      transition: opacity .25s ease;
+    }
+
+    img:nth-child(2) {
+      margin-left: -80px;
+      opacity: 0;
+    }
+
+    span {
+      font-family: var(--font-heading) !important;
+      font-size: 32px;
+    }
+  }
+
+  header.scrolled {
+    background-color: var(--color-accent);
+
+    * {
+      color: #fff;
+    }
+
+    #header-logo-link img {
+      opacity: 0;
+    }
+
+    #header-logo-link img:nth-child(2) {
+      opacity: 1;
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 16px;
+
+    a {
+      font-size: 20px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      justify-content: center;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+</style>

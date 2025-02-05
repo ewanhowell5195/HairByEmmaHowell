@@ -1,16 +1,12 @@
 <script setup>
+  import Header from "./components/sections/Header.vue"
   import Footer from "./components/sections/Footer.vue"
   import PopupViewer from "./components/sections/PopupViewer.vue"
 </script>
 
 <template>
+  <Header />
   <div id="page">
-    <nav>
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-      </ul>
-    </nav>
     <router-view />
   </div>
   <Footer />
