@@ -18,7 +18,7 @@
 
 <template>
   <header :class="{ scrolled: isScrolled }">
-    <div class="container">
+    <div class="header container">
       <router-link to="/" id="header-logo-link">
         <img src="/assets/images/logo/transparent.webp" width="64" height="64">
         <img src="/assets/images/logo/transparent_light.webp" width="64" height="64">
@@ -48,12 +48,10 @@
     }
   }
 
-  .container {
-    margin: 0 auto;
-    padding: 24px;
+  .header {
+    margin: 24px auto;
     flex-direction: row;
     align-items: center;
-    max-width: initial;
     gap: 32px;
     justify-content: space-between;
   }
