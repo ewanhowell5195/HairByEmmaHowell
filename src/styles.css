@@ -105,7 +105,19 @@ button, .button {
   }
 }
 
+.mobile {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
+  .mobile {
+    display: flex !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
   .container {
     margin: 30px auto 50px;
     max-width: min(var(--content-width), 100% - 20px * 2);
@@ -122,6 +134,17 @@ button, .button {
 
   h2 {
     font-size: 32px;
+  }
+
+  button, .button {
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px 16px;
+    gap: 8px;
+
+    .icon {
+      font-size: 18px;
+    }
   }
 }
 

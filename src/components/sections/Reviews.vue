@@ -30,7 +30,7 @@
   <section class="container">
     <div class="review-row">
       <h1>Customer Reviews</h1>
-      <a class="button" :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" target="_blank">Write a review <i class="icon">edit</i></a>
+      <a class="button desktop" :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" target="_blank"><i class="icon">edit</i> Write a review</a>
     </div>
     <div ref="splide" class="splide pagination-below">
       <div class="splide__track">
@@ -56,6 +56,7 @@
         </ul>
       </div>
     </div>
+    <a class="button mobile" :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" target="_blank"><i class="icon">edit</i> Write a review</a>
   </section>
 </template>
 
