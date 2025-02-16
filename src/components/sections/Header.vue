@@ -44,7 +44,7 @@
 
     * {
       color: #000;
-      transition: color .25s ease;
+      transition: color .25s ease, background-color .25s ease;
     }
   }
 
@@ -62,16 +62,16 @@
     text-decoration: none;
     gap: 16px;
 
-    img {
+    & img {
       transition: opacity .25s ease;
     }
 
-    img:nth-child(2) {
+    & img:nth-child(2) {
       margin-left: -80px;
       opacity: 0;
     }
 
-    span {
+    & span {
       font-family: var(--font-heading) !important;
       font-size: 32px;
     }
@@ -82,6 +82,10 @@
 
     * {
       color: #fff;
+    }
+
+    & a::before {
+      background-color: #fff;
     }
 
     #header-logo-link img {
@@ -97,12 +101,25 @@
     display: flex;
     gap: 16px;
 
-    a {
+    & a {
       font-size: 20px;
       text-decoration: none;
+      position: relative;
 
-      &:hover {
-        text-decoration: underline;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        height: 2px;
+        background-color: #000;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        transition: width .15s ease;;
+      }
+
+      &:hover::before {
+        width: 100%;
       }
     }
   }

@@ -5,10 +5,13 @@
   --color-accent: #2C2D2A;
   --color-background: #D9D9D9;
   --content-width: 1280px;
+  --header-height: 112px;
   --box-shadow: 0 2px 6px 2px #0004;
+  --box-shadow-active: 0 0 6px 2px #0004;
   --font: Nunito, Arial, serif;
   --font-heading: "Rouge Script", Arial, serif;
   --transparency: url("data:image/webp;base64,UklGRiYAAABXRUJQVlA4TBkAAAAvD8ADAAWRto2Te5h/fYXnEf2fgDj+cfwDAA==");
+  scroll-padding-top: calc(var(--header-height) + 40px);
 }
 
 * {
@@ -31,11 +34,16 @@ body {
 
 .container {
   margin: 40px auto 60px;
-  max-width: min(var(--content-width), 100% - 40px * 2);
+  max-width: var(--content-width);
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 0 40px;
+}
+
+section.container + section.container {
+  margin-top: 0;
 }
 
 .spacer {
@@ -94,7 +102,7 @@ button, .button {
   display: flex;
   font-size: 20px;
   border-radius: 12px;
-  padding: 12px 24px;
+  padding: 12px 32px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -102,9 +110,38 @@ button, .button {
   user-select: none;
   cursor: pointer;
   line-height: 1;
+  text-shadow: none;
+  transition: box-shadow .15s ease, transform .15s ease;
+  max-width: min(100%, 256px);
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: var(--box-shadow);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: var(--box-shadow-active);
+  }
 
   .icon {
     font-size: 22px;
+  }
+
+  &.white {
+    background-color: #fff;
+    color: var(--color-accent);
+  }
+
+  &.secondary {
+    background-color: initial;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+
+    &.white {
+      border: 2px solid #fff;
+      color: #fff;
+    }
   }
 }
 
@@ -122,8 +159,8 @@ button, .button {
   }
 
   .container {
-    margin: 30px auto 50px;
-    max-width: min(var(--content-width), 100% - 20px * 2);
+    margin: 30px auto 40px;
+    padding: 0 20px;
     gap: 16px;
   }
 
@@ -142,7 +179,7 @@ button, .button {
   button, .button {
     font-size: 16px;
     border-radius: 10px;
-    padding: 10px 16px;
+    padding: 10px 24px;
     gap: 8px;
 
     .icon {
@@ -153,7 +190,7 @@ button, .button {
 
 /* Splide pagination */
 
-.splide.pagination-below {
+.splide.is-overflow.pagination-below {
   padding-bottom: 48px;
 
   .splide__pagination {

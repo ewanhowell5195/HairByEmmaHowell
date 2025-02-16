@@ -171,5 +171,10 @@
     .review-user-details :first-child {
       font-size: 20px;
     }
+
+    .button {
+      width: 256px;
+      align-self: center;
+    }
   }
 </style>
