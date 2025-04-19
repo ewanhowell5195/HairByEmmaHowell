@@ -7,18 +7,22 @@
         </router-link>
         <div class="footer-links">
           <div>Pages</div>
+          <router-link to="/hairdressing">Hairdressing</router-link>
+          <router-link to="/bridalhair">Bridal Hair</router-link>
           <router-link to="/about">About</router-link>
+          <router-link to="/contact">Contact</router-link>
         </div>
         <div class="footer-links">
           <div>Legal</div>
           <router-link to="/privacy">Privacy Policy</router-link>
-          <router-link to="/tos">Terms of Service</router-link>
+          <router-link to="/terms">Terms of Service</router-link>
         </div>
       </div>
       <hr>
       <div id="footer-socials">
         <a href="https://www.facebook.com/profile.php?id=61559965659213" class="fa fa-facebook-f" target="_blank"></a>
         <a href="https://www.instagram.com/hairby_emmahowell_/" class="fa fa-instagram" style="font-size: 24px;" target="_blank"></a>
+        <a href="https://www.instagram.com/bridalhairby_emmahowell/" class="fa fa-instagram" style="font-size: 24px;" target="_blank"></a>
         <a :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" class="fa fa-google" target="_blank"></a>
       </div>
       <p id="footer-copyright">&copy; {{ new Date().getFullYear() }} Hair by Emma Howell. All rights reserved.</p>
