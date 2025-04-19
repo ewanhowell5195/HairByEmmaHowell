@@ -46,11 +46,15 @@
   :deep(.banner-title) {
     font-family: var(--font-heading) !important;
     font-size: 92px;
-      line-height: 1;
+    line-height: 1;
+  }
+
+  :deep(.banner-logo) {
+    height: 200px;
   }
 
   :deep(p) {
-    max-width: 512px;
+    max-width: 620px;
     font-size: 20px;
   }
 

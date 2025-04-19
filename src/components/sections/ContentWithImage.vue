@@ -15,20 +15,22 @@
 </script>
 
 <template>
-  <section class="container" :class="{ reverse: content === 'left' }">
-    <h1 v-if="heading">{{ heading }}</h1>
-    <div class="section-image">
-      <img :src="image" popupable />
-    </div>
-    <div class="content">
-      <h1 v-if="heading">{{ heading }}</h1>
-      <slot></slot>
+  <section class="content-with-image">
+    <div class="container" :class="{ reverse: content === 'left' }">
+      <h2 v-if="heading">{{ heading }}</h2>
+      <div class="section-image">
+        <img :src="image" popupable />
+      </div>
+      <div class="content">
+        <h2 v-if="heading">{{ heading }}</h2>
+        <slot></slot>
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-  section {
+  section > div {
     flex-direction: row;
 
     > * {
@@ -39,7 +41,7 @@
       flex-direction: row-reverse;
     }
 
-    > h1 {
+    > h2 {
       display: none;
     }
   }
@@ -65,7 +67,7 @@
     padding: 20px;
   }
 
-  :deep(h1) {
+  :deep(h2) {
     text-align: center;
   }
 
@@ -75,14 +77,14 @@
   }
 
   @media (max-width: 768px) {
-    section {
+    section > div {
       flex-direction: column !important;
 
       > * {
         width: 100%;
       }
 
-      > h1 {
+      > h2 {
         display: initial;
         text-align: left;
       }
@@ -91,7 +93,7 @@
     .content {
       padding-bottom: 0;
 
-      h1 {
+      h2 {
         display: none;
       }
     }
