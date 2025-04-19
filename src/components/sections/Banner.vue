@@ -1,6 +1,4 @@
 <script setup>
-  import { defineProps } from 'vue'
-
   defineProps({
     image: {
       type: String,
@@ -45,24 +43,24 @@
     text-shadow: 0 2px 2px #0008;
   }
 
-  ::v-deep .banner-title {
+  :deep(.banner-title) {
     font-family: var(--font-heading) !important;
     font-size: 92px;
       line-height: 1;
   }
 
-  ::v-deep p {
+  :deep(p) {
     max-width: 512px;
     font-size: 20px;
   }
 
   @media (max-width: 768px) {
-    ::v-deep .banner-title {
+    :deep(.banner-title) {
       font-family: var(--font-heading) !important;
       font-size: 64px;
     }
 
-    ::v-deep p {
+    :deep(p) {
       font-size: 18px;
     }
   }

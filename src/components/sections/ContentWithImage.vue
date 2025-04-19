@@ -1,6 +1,4 @@
 <script setup>
-  import { defineProps } from 'vue'
-
   defineProps({
     image: {
       type: String,
@@ -67,11 +65,11 @@
     padding: 20px;
   }
 
-  ::v-deep h1 {
+  :deep(h1) {
     text-align: center;
   }
 
-  ::v-deep .button {
+  :deep(.button) {
     width: 256px;
     align-self: center;
   }
