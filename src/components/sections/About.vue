@@ -49,7 +49,7 @@
   }
 
   :deep(p) {
-    font-family: Caveat;
+    font-family: Oooh Baby, Arial, serif;
     font-size: 24px;
   }
 
