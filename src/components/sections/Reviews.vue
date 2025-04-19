@@ -115,7 +115,7 @@
     width: 56px;
     height: 56px;
     color: #fff;
-    background: var(--color-accent);
+    background: var(--color-primary);
     font-size: 40px;
   }
 

@@ -1,0 +1,85 @@
+<script setup>
+  defineProps({
+    modelValue: Boolean
+  })
+
+  const emit = defineEmits(["update:modelValue"])
+
+  function closeSidebar() {
+    emit("update:modelValue", false)
+  }
+</script>
+
+<template>
+  <div id="sidebar" :class="{ open: modelValue }">
+    <router-link to="/" @click="closeSidebar">Home</router-link>
+    <router-link to="/hairdressing" @click="closeSidebar">Hairdressing</router-link>
+    <router-link to="/bridalhair" @click="closeSidebar">Bridal Hair</router-link>
+    <router-link to="/about" @click="closeSidebar">About</router-link>
+    <router-link to="/contact" @click="closeSidebar">Contact</router-link>
+  </div>
+</template>
+
+<style scoped>
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: var(--header-height);
+    bottom: 0;
+    background-color: var(--color-primary);
+    width: 256px;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform .25s ease, background-color .25s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px 32px;
+    gap: 8px;
+    align-items: flex-start;
+
+    &.open {
+      transform: initial;
+    }
+
+    * {
+      color: #fff;
+      transition: color .25s ease, background-color .25s ease;
+    }
+  }
+
+  a {
+    font-size: 24px;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      height: 2px;
+      background-color: currentColor;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      transition: width .15s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #sidebar {
+      padding: 10px 20px 20px;
+    }
+
+    a {
+      font-size: 18px;
+
+      &::before {
+        bottom: 1px;
+      }
+    } 
+  }
+</style>
