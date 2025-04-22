@@ -1,7 +1,3 @@
-<script setup>
-  import CustomForm from "../snippets/Form.vue"
-</script>
-
 <script>
   export default {
     title: "Contact",
@@ -15,6 +11,10 @@
       }
     }
   }
+</script>
+
+<script setup>
+  import CustomForm from "../snippets/Form.vue"
 </script>
 
 <template>
