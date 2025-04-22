@@ -1,5 +1,6 @@
 <script setup>
   import "@splidejs/splide/dist/css/splide.min.css"
+  import CustomForm from "../snippets/Form.vue"
   import Splide from "@splidejs/splide"
   import { onMounted, ref } from "vue"
 
@@ -35,6 +36,17 @@
     <div id="service-info-right">
       <h1>{{ service.heading }}</h1>
       <p>{{ service.description }}</p>
+      <CustomForm boxed>
+        <label for="date">Preferred Date</label>
+        <input id="datetime" name="datetime" type="text" required />
+        <label for="details">What would you like done?</label>
+        <textarea
+          id="details"
+          name="details"
+          placeholder="e.g. Cut and blow-dry, highlights, colour..."
+          required
+        ></textarea>
+      </CustomForm>
     </div>
   </section>
 </template>
@@ -70,6 +82,7 @@
     display: flex;
     flex-direction: column;
     width: 600px;
+    gap: 16px;
   }
 
   @media (max-width: 768px) {

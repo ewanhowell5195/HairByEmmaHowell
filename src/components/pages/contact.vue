@@ -1,7 +1,19 @@
+<script setup>
+  import CustomForm from "../snippets/Form.vue"
+</script>
+
 <script>
   export default {
     title: "Contact",
-    description: "Get in touch with Emma Howell."
+    description: "Get in touch with Emma Howell.",
+    mounted() {
+      this.$refs.redirect.value = `${window.location.origin}/submitted`
+    },
+    methods: {
+      updateRedirect(e) {
+        this.$refs.redirect.value = `${window.location.origin}/submitted?name=${encodeURIComponent(e.currentTarget.value.trim().split(" ")[0])}`
+      }
+    }
   }
 </script>
 
@@ -12,17 +24,10 @@
       Want to get in touch or learn more?  Use the form below, reach out directly, or connect on social media.
     </p>
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="918c1fad-1f80-48ec-b7e8-133784209a2b" />
-      <input type="hidden" name="subject" value="New Contact form submission for Hair by Emma Howell">
-      <label for="name">Name</label>
-      <input id="name" type="text" name="name" placeholder="Your Name" required />
-      <label for="email">Email</label>
-      <input id="email" type="email" name="email" placeholder="name@example.com" required />
+    <CustomForm boxed>
       <label for="message">Message</label>
       <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="white">Submit</button>
-    </form>
+    </CustomForm>
 
     <h2>Direct Contact</h2>
     <p>
@@ -64,23 +69,5 @@
 
   span {
     font-size: 28px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    outline: 2px solid var(--color-primary);
-    padding: 16px;
-    border-radius: 24px;
-    background-color: var(--color-background-primary);
-    color: #fff;
-    margin-bottom: 20px;
-
-    & label {
-      margin-bottom: -8px;
-      font-weight: 700;
-      font-size: 18px;
-    }
   }
 </style>
