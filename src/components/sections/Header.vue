@@ -39,8 +39,8 @@
         <span>Hair by Emma Howell</span>
       </router-link>
       <nav>
-        <router-link to="/hairdressing">Hairdressing</router-link>
-        <router-link to="/bridalhair">Bridal Hair</router-link>
+        <router-link to="/services/hairdressing">Hairdressing</router-link>
+        <router-link to="/services/bridalhair">Bridal Hair</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/contact">Contact</router-link>
       </nav>
@@ -52,7 +52,7 @@
 <style>
   :root {
     --header-height: 112px;
-    scroll-padding-top: calc(var(--header-height) + 40px);
+    scroll-padding-top: var(--header-height);
   }
 
   @media (max-width: 768px) {

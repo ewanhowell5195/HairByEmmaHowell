@@ -1,4 +1,6 @@
 <script setup>
+  import hairdressing from "@/assets/json/services/hairdressing.json"
+  import bridalHair from "@/assets/json/services/bridal_hair.json"
   import ContentWithImage from "../sections/ContentWithImage.vue"
   import Reviews from "../sections/Reviews.vue"
   import Banner from "../sections/Banner.vue"
@@ -22,16 +24,16 @@
   <div id="services">
     <h1 class="container">My Services</h1>
     <hr>
-    <ContentWithImage heading="Hairdressing" image="/assets/images/home/hairdressing.webp">
-      <p>Hairdresser with 15 years experience, based in Row Town. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nisl vel quam dapibus tempus.</p>
+    <ContentWithImage heading="Hairdressing" :image="hairdressing.images.map(e => `/assets/images/services/hairdressing/${e}`)">
+      <p>{{ hairdressing.description }}</p>
       <div class="spacer"></div>
-      <router-link to="/hairdressing" class="button white">Learn More</router-link>
+      <router-link to="/services/hairdressing" class="button white">Learn More</router-link>
     </ContentWithImage>
     <hr>
-    <ContentWithImage content="left" heading="Bridal Hair" image="/assets/images/home/bridalhair.webp">
-      <p>Hairdresser with 15 years experience, based in Row Town. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nisl vel quam dapibus tempus.</p>
+    <ContentWithImage content="left" heading="Bridal Hair" :image="bridalHair.images.map(e => `/assets/images/services/bridal_hair/${e}`)" :delay="1500">
+      <p>{{ bridalHair.description }}</p>
       <div class="spacer"></div>
-      <router-link to="/bridalhair" class="button white">Learn More</router-link>
+      <router-link to="/services/bridalhair" class="button white">Learn More</router-link>
     </ContentWithImage>
   </div>
   <Reviews />

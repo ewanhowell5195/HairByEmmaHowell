@@ -1,8 +1,8 @@
 <script setup>
-  import { onMounted, ref } from "vue"
   import "@splidejs/splide/dist/css/splide.min.css"
   import reviews from "@/assets/json/reviews.json"
   import Splide from "@splidejs/splide"
+  import { onMounted, ref } from "vue"
 
   const componentId = Math.random()
   const splide = ref(null)

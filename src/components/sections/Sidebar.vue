@@ -13,8 +13,8 @@
 <template>
   <div id="sidebar" :class="{ open: modelValue }">
     <router-link to="/" @click="closeSidebar">Home</router-link>
-    <router-link to="/hairdressing" @click="closeSidebar">Hairdressing</router-link>
-    <router-link to="/bridalhair" @click="closeSidebar">Bridal Hair</router-link>
+    <router-link to="/services/hairdressing" @click="closeSidebar">Hairdressing</router-link>
+    <router-link to="/services/bridalhair" @click="closeSidebar">Bridal Hair</router-link>
     <router-link to="/about" @click="closeSidebar">About</router-link>
     <router-link to="/contact" @click="closeSidebar">Contact</router-link>
   </div>

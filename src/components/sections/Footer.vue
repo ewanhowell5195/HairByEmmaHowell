@@ -7,8 +7,8 @@
         </router-link>
         <div class="footer-links">
           <div>Pages</div>
-          <router-link to="/hairdressing">Hairdressing</router-link>
-          <router-link to="/bridalhair">Bridal Hair</router-link>
+          <router-link to="/services/hairdressing">Hairdressing</router-link>
+          <router-link to="/services/bridalhair">Bridal Hair</router-link>
           <router-link to="/about">About</router-link>
           <router-link to="/contact">Contact</router-link>
         </div>
