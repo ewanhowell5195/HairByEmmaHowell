@@ -18,9 +18,26 @@
     <router-link to="/about" @click="closeSidebar">About</router-link>
     <router-link to="/contact" @click="closeSidebar">Contact</router-link>
   </div>
+  <div id="sidebar-content-overlay" :class="{ visible: modelValue }" @click="closeSidebar"></div>
 </template>
 
 <style scoped>
+  #sidebar-content-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #0008;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    backdrop-filter: blur(4px);
+
+    &.visible {
+      pointer-events: initial;
+      opacity: 1;
+    }
+  }
+
   #sidebar {
     position: fixed;
     left: 0;
@@ -28,7 +45,7 @@
     bottom: 0;
     background-color: var(--color-primary);
     width: 256px;
-    z-index: 1;
+    z-index: 3;
     transform: translateX(-100%);
     transition: transform .25s ease, background-color .25s ease;
     display: flex;

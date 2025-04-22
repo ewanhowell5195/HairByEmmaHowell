@@ -33,7 +33,7 @@
   <header :class="{ scrolled: isScrolled }">
     <div class="header container">
       <HamburgerButton v-model="sidebarOpen" />
-      <router-link to="/" id="header-logo-link">
+      <router-link to="/" id="header-logo-link" @click="sidebarOpen = false">
         <img src="/assets/images/logo/transparent.webp" width="64" height="64">
         <img src="/assets/images/logo/transparent_light.webp" width="64" height="64">
         <span>Hair by Emma Howell</span>
@@ -75,7 +75,7 @@
       transition: color .25s ease, background-color .25s ease;
     }
 
-    &:not(.scrolled) + #sidebar {
+    &:not(.scrolled) + :deep(#sidebar) {
       background-color: var(--color-background);
 
       & * {
