@@ -1,20 +1,24 @@
 <script>
   export default {
     title: "Contact",
-    description: "Get in touch with Emma Howell.",
-    mounted() {
-      this.$refs.redirect.value = `${window.location.origin}/submitted`
-    },
-    methods: {
-      updateRedirect(e) {
-        this.$refs.redirect.value = `${window.location.origin}/submitted?name=${encodeURIComponent(e.currentTarget.value.trim().split(" ")[0])}`
-      }
-    }
+    description: "Get in touch with Emma Howell."
   }
 </script>
 
 <script setup>
+  import { onMounted, ref } from "vue"
   import CustomForm from "../snippets/Form.vue"
+
+  const redirect = ref(null)
+
+  const updateRedirect = e => {
+    const name = e.currentTarget.value.trim().split(" ")[0]
+    redirect.value = `${window.location.origin}/submitted?name=${encodeURIComponent(name)}`
+  }
+
+  onMounted(() => {
+    redirect.value = `${window.location.origin}/submitted`
+  })
 </script>
 
 <template>
