@@ -44,7 +44,7 @@
     <label for="email">Email</label>
     <input id="email" type="email" name="email" placeholder="name@example.com" required />
     <slot ref="slot" />
-    <button type="submit">Submit</button>
+    <button type="submit" :class="{ white: boxed }">Submit</button>
   </form>
 </template>
 
