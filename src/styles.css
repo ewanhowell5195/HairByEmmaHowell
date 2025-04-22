@@ -6,6 +6,7 @@
   --content-width: 1280px;
   --box-shadow: 0 2px 6px 2px #0004;
   --box-shadow-active: 0 0 6px 2px #0004;
+  --drop-shadow: drop-shadow(0 2px 6px #0004);
   --font: Nunito, Arial, serif;
   --font-heading: "Roboto Flex", Arial, serif;
   --transparency: url("data:image/webp;base64,UklGRiYAAABXRUJQVlA4TBkAAAAvD8ADAAWRto2Te5h/fYXnEf2fgDj+cfwDAA==");

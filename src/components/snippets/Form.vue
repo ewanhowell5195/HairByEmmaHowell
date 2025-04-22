@@ -1,4 +1,5 @@
 <script setup>
+  import "@/assets/styles/flatpickr.css"
   import "flatpickr/dist/flatpickr.css"
   import { ref, onMounted } from "vue"
   import flatpickr from "flatpickr"
@@ -21,15 +22,17 @@
 
   onMounted(() => {
     const input = form.value.querySelector("#datetime")
-    console.log(form)
     if (input) {
       flatpickr(input, {
         enableTime: true,
-        minDate: "today",
-        // defaultDate,
-        dateFormat: "H:i d/m/Y",
+        minDate: new Date().fp_incr(1),
+        dateFormat: "d/m/Y at H:i",
         time_24hr: true,
-        // onChange: validateDates
+        minTime: "09:00",
+        maxTime: "17:30",
+        disable: [
+          date => date.getDay() === 0 || date.getDay() === 6
+        ]
       })
     }
   })
