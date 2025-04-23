@@ -16,6 +16,7 @@
     <router-link to="/services/hairdressing" @click="closeSidebar">Hairdressing</router-link>
     <router-link to="/services/bridalhair" @click="closeSidebar">Bridal Hair</router-link>
     <router-link to="/about" @click="closeSidebar">About</router-link>
+    <router-link to="/reviews" @click="closeSidebar">Reviews</router-link>
     <router-link to="/contact" @click="closeSidebar">Contact</router-link>
   </div>
   <div id="sidebar-content-overlay" :class="{ visible: modelValue }" @click="closeSidebar"></div>

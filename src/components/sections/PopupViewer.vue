@@ -41,7 +41,7 @@
         }
         if (!element) return
         const value = element.getAttribute("popupable")
-        this.images = Array.from(document.querySelectorAll(`[popupable="${value}"]`))
+        this.images = Array.from(document.querySelectorAll(`[popupable="${value}"]`)).filter(e => !e.closest('[id*="clone"]'))
         if (this.images.length === 1) {
           this.$refs.prev.hidden = true
           this.$refs.next.hidden = true

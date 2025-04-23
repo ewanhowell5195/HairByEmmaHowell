@@ -3,12 +3,20 @@
     image: {
       type: String,
       required: true
+    },
+    mobileimage: {
+      type: String
     }
   })
 </script>
 
 <template>
-  <section :style="{ backgroundImage: `url(${image})` }">
+  <section :class="{ desktop: mobileimage }" :style="{ backgroundImage: `url(${image})` }">
+    <div class="banner-content container">
+      <slot></slot>
+    </div>
+  </section>
+  <section v-if="mobileimage" class="mobile" :style="{ backgroundImage: `url(${mobileimage})` }">
     <div class="banner-content container">
       <slot></slot>
     </div>

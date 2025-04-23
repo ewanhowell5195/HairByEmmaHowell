@@ -29,9 +29,9 @@
         dateFormat: "d/m/Y at H:i",
         time_24hr: true,
         minTime: "09:00",
-        maxTime: "17:30",
+        maxTime: "18:00",
         disable: [
-          date => date.getDay() === 0 || date.getDay() === 6
+          date => date.getDay() === 0
         ]
       })
     }

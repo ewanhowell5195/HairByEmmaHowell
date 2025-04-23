@@ -8,7 +8,8 @@
   --box-shadow-active: 0 0 6px 2px #0004;
   --drop-shadow: drop-shadow(0 2px 6px #0004);
   --font: Nunito, Arial, serif;
-  --font-heading: "Roboto Flex", Arial, serif;
+  --font-heading: "Alex Brush", Arial, serif;
+  --font-small-heading: "Roboto Flex", Arial, serif;
   --transparency: url("data:image/webp;base64,UklGRiYAAABXRUJQVlA4TBkAAAAvD8ADAAWRto2Te5h/fYXnEf2fgDj+cfwDAA==");
 }
 
@@ -38,6 +39,10 @@ body {
   flex-direction: column;
   gap: 24px;
   padding: 0 40px;
+
+  > :is(h1, h2, h3, h4, h5, h6) + p {
+    margin-top: -24px;
+  }
 }
 
 section.container + section.container {
@@ -94,16 +99,24 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: var(--font-heading);
+  font-family: var(--font-small-heading);
   font-weight: 600;
 }
 
-h1 {
+h1, h1 * {
   font-size: 56px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  line-height: 1;
+  margin: 6px 0;
 }
 
-h2 {
+h2, h2 * {
   font-size: 40px;
+}
+
+h3, h3 * {
+  font-size: 28px;
 }
 
 hr {
@@ -193,18 +206,27 @@ textarea {
     margin: 30px auto 40px;
     padding: 0 20px;
     gap: 16px;
+
+    > :is(h1, h2, h3, h4, h5, h6) + p {
+      margin-top: -16px;
+    }
   }
 
   * {
     font-size: 14px;
   }
 
-  h1 {
+  h1, h1 * {
     font-size: 40px;
+    margin: 5px 0;
   }
 
-  h2 {
+  h2, h2 * {
     font-size: 32px;
+  }
+
+  h3, h3 * {
+    font-size: 24px;
   }
 
   hr {

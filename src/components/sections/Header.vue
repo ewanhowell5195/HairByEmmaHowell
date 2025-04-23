@@ -10,20 +10,12 @@
     isScrolled.value = window.scrollY > 0 || sidebarOpen.value
   }
 
-  function handleResize() {
-    if (window.innerWidth > 800) {
-      sidebarOpen.value = false
-    }
-  }
-
   onMounted(() => {
     window.addEventListener("scroll", handleScroll)
-    window.addEventListener("resize", handleResize)
   })
 
   onUnmounted(() => {
     window.removeEventListener("scroll", handleScroll)
-    window.removeEventListener("resize", handleResize)
   })
 
   watch(sidebarOpen, handleScroll)
@@ -38,6 +30,7 @@
         <img src="/assets/images/logo/transparent_light.webp" width="64" height="64">
         <span>Hair by Emma Howell</span>
       </router-link>
+      <div class="spacer"></div>
       <nav>
         <router-link to="/services/hairdressing">Hairdressing</router-link>
         <router-link to="/services/bridalhair">Bridal Hair</router-link>
@@ -89,7 +82,6 @@
     flex-direction: row;
     align-items: center;
     gap: 32px;
-    justify-content: space-between;
   }
 
   #header-logo-link {
@@ -109,7 +101,9 @@
 
     & span {
       font-family: var(--font-heading) !important;
-      font-size: 32px;
+      font-size: 40px;
+      color: var(--color-primary);
+      margin-top: 7px;
     }
   }
 
@@ -124,6 +118,10 @@
       background-color: #fff;
     }
 
+    #header-logo-link span {
+      color: var(--color-background);
+    }
+
     #header-logo-link img {
       opacity: 0;
     }
@@ -131,6 +129,10 @@
     #header-logo-link img:nth-child(2) {
       opacity: 1;
     }
+  }
+
+  .spacer {
+    margin-right: -32px;
   }
 
   nav {
@@ -160,23 +162,29 @@
     }
   }
 
-  .hamburger-menu {
-    display: none;
+  @media (max-width: 1000px) {
+    #header-logo-link span {
+      font-size: 32px;
+    }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     nav {
       display: none;
-    }
-
-    .hamburger-menu {
-      display: flex;
     }
 
     #header-logo-link {
       flex: 1;
       justify-content: center;
       margin-right: calc(32px + 35px);
+
+      & span {
+        font-size: 40px;
+      }
+    }
+
+    .spacer {
+      display: none;
     }
   }
 

@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <Banner image="/assets/images/home/banner.webp">
+  <Banner image="/assets/images/home/banner.webp" mobileimage="/assets/images/home/banner_mobile.jpg">
     <img class="banner-logo" src="/assets/images/logo/transparent_light.webp">
     <p>Hairdresser with 15 years experience, based in Row Town. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nisl vel quam dapibus tempus.</p>
     <button @click="scrollToServices" class="white">View Services</button>
