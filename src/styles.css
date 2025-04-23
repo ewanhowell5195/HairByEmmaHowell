@@ -44,6 +44,18 @@ section.container + section.container {
   margin-top: 0;
 }
 
+section.contrast {
+  background-color: var(--color-background-primary);
+
+  * {
+    color: #fff;
+  }
+}
+
+.row {
+  flex-direction: row;
+}
+
 .spacer {
   flex: 1;
 }

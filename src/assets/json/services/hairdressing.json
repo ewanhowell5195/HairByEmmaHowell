@@ -5,5 +5,58 @@
     "red.jpg",
     "blonde.jpg",
     "brown.jpg"
-  ]
+  ],
+  "price_list": {
+    "Hair Services": [
+      {
+        "name": "Wash, cut and blow dry",
+        "price": "£40"
+      },
+      {
+        "name": "Wash and blow dry",
+        "price": "£30"
+      },
+      {
+        "name": "Full head of highlights/Balayage",
+        "price": "£95"
+      },
+      {
+        "name": "Half head of highlights/Balayage",
+        "price": "£70"
+      },
+      {
+        "name": "Partial highlights",
+        "price": "£50"
+      },
+      {
+        "name": "Root tint",
+        "price": "£40"
+      },
+      {
+        "name": "Root tint and refresh",
+        "price": "£50"
+      },
+      {
+        "name": "Semi-permanent colour",
+        "price": "£50"
+      },
+      {
+        "name": "Toner",
+        "price": "£20"
+      },
+      {
+        "name": "Men’s cut",
+        "price": "£25"
+      },
+      {
+        "name": "Olaplex treatment",
+        "price": "£20"
+      }
+    ],
+    "Extra Information": [
+      {
+        "name": "Skin test is required at least 48 hours prior to any colour appointment."
+      }
+    ]
+  }
 }

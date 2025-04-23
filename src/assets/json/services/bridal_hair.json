@@ -5,5 +5,58 @@
     "pearls.jpg",
     "flowers.jpg",
     "brown.jpg"
-  ]
+  ],
+  "price_list": {
+    "Bridal Services": [
+      {
+        "name": "Brides hair on the day",
+        "price": "£90"
+      },
+      {
+        "name": "Bridesmaid",
+        "price": "£60"
+      },
+      {
+        "name": "Mother of the Bride",
+        "price": "£60"
+      },
+      {
+        "name": "Flower Girl",
+        "price": "£30"
+      },
+      {
+        "name": "Additional Bridal Party",
+        "price": "£60"
+      }
+    ],
+    "Trial Services": [
+      {
+        "name": "BRIDES TRIAL",
+        "price": "£70",
+        "description": "2 hr appt at home salon or mobile if travel is covered"
+      },
+      {
+        "name": "BRIDAL PARTY TRIAL",
+        "price": "£50",
+        "description": "1.5 hr appt at home salon or mobile if done with bride’s trial"
+      }
+    ],
+    "Bridal Packages": [
+      {
+        "name": "EMERALD PACKAGE",
+        "price": "£330",
+        "description": "1 Bride trial, Bride on day, 3 adult bridal party members"
+      },
+      {
+        "name": "RUBY PACKAGE",
+        "price": "£390",
+        "description": "1 Bride trial, Bride on day, 4 adult bridal party members"
+      },
+      {
+        "name": "DIAMOND PACKAGE",
+        "price": "£450",
+        "description": "1 Bride trial, Bride on day, 5 adult bridal party members"
+      }
+    ]
+  }
 }
