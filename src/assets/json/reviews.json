@@ -1,5 +1,6 @@
 [
   {
+    "service": "hairdressing",
     "heading": "Excellent",
     "review": "I recently visited Emma’s at-home salon for a cut and colour, and it was an incredible experience.\n\nFrom the start, Emma made me feel completely comfortable, creating a warm and welcoming atmosphere. She listened carefully to the style I wanted and never made me feel like I was asking too much, even with my request for a more time-consuming colour trend!\n\nThe results were absolutely beautiful, exactly as I envisioned. Emma’s patience, attention to detail, and professionalism truly set her apart. I will definitely be returning and highly recommend her services!",
     "name": "Ella",
@@ -10,6 +11,7 @@
     "image3": "review1_3.jpg"
   },
   {
+    "service": "hairdressing",
     "heading": "Amazing",
     "review": "I recommend Emma to anyone; she is amazing! She is friendly, professional, takes the time to understand what you want to achieve and is very mindful of your time; great for fitting in a quick hair cut in your lunch break! She has cut and coloured my hair, as well as curled it for recent weddings I’ve attended, and I’m always blown away by what she is able to achieve.",
     "name": "Emily",
@@ -18,6 +20,7 @@
     "image1": "IMG_1146.HEIC"
   },
   {
+    "service": "hairdressing",
     "heading": "Highly Recommend!",
     "review": "I had such a lovely experience today after meeting Emma. I finally have the hair colour I really wanted and needed! She worked so hard to get my perfect shade, and it was such a great experience. ",
     "name": "Sanaz",
@@ -26,6 +29,7 @@
     "image1": "IMG_9187.HEIC"
   },
   {
+    "service": "bridalhair",
     "heading": "Transformed my hair",
     "review": "Amazing service, absolutely transformed my hair from flat and dull colour to a nice bright blonde. Highly recommend Emma!",
     "name": "Emma",
