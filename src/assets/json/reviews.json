@@ -2,7 +2,7 @@
   {
     "heading": "Excellent",
     "review": "I recently visited Emma’s at-home salon for a cut and colour, and it was an incredible experience.\n\nFrom the start, Emma made me feel completely comfortable, creating a warm and welcoming atmosphere. She listened carefully to the style I wanted and never made me feel like I was asking too much, even with my request for a more time-consuming colour trend!\n\nThe results were absolutely beautiful, exactly as I envisioned. Emma’s patience, attention to detail, and professionalism truly set her apart. I will definitely be returning and highly recommend her services!",
-    "name": "Ella K.",
+    "name": "Ella",
     "date": "14/10/2024",
     "avatar": "avatar_e.png",
     "image1": "review1_1.jpg",
@@ -10,39 +10,27 @@
     "image3": "review1_3.jpg"
   },
   {
-    "heading": "Great Experience!",
-    "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nisl vel quam dapibus tempus. Nulla facilisi. Vivamus non metus vel sapien bibendum eleifend a id ligula. Integer sit amet lacus auctor, iaculis justo nec, venenatis sapien. Phasellus non dui at urna accumsan pharetra.\n\nDonec consectetur, velit at pharetra dictum, nulla sem elementum lorem, nec hendrerit massa arcu ut nunc. Cras quis enim ut urna ultrices facilisis. Suspendisse potenti.",
-    "name": "Alex R.",
+    "heading": "Amazing",
+    "review": "I recommend Emma to anyone; she is amazing! She is friendly, professional, takes the time to understand what you want to achieve and is very mindful of your time; great for fitting in a quick hair cut in your lunch break! She has cut and coloured my hair, as well as curled it for recent weddings I’ve attended, and I’m always blown away by what she is able to achieve.",
+    "name": "Emily",
     "date": "2024-03-12T00:00:00.000Z",
-    "avatar": "review2_1.jpg",
-    "image1": "review2_1.jpg",
-    "image2": "review2_2.jpg",
-    "image3": "review2_3.jpg"
+    "avatar": "IMG_1138.HEIC",
+    "image1": "IMG_1146.HEIC"
   },
   {
     "heading": "Highly Recommend!",
-    "review": "Vestibulum ac nisl eget purus scelerisque sagittis. Nam facilisis, libero eu gravida rhoncus, nulla lacus volutpat augue, ac blandit sem libero vel nunc.\n\nCurabitur tincidunt turpis ut purus aliquet, sed dictum turpis feugiat. Praesent elementum, est non egestas mattis, sapien quam pharetra mi, non tristique augue ligula et justo. Nullam vitae ultricies risus. Morbi nec ex erat.\n\nAenean a mi nec mauris auctor tincidunt nec ac ex. Suspendisse potenti. Cras pharetra purus ut elit aliquet, id iaculis eros accumsan.",
-    "name": "Jamie L.",
-    "date": "2024-04-04T23:00:00.000Z",
-    "image1": "review3_1.jpg",
-    "image2": "review3_2.jpg"
+    "review": "I had such a lovely experience today after meeting Emma. I finally have the hair colour I really wanted and needed! She worked so hard to get my perfect shade, and it was such a great experience. ",
+    "name": "Sanaz",
+    "date": "22/02/2025",
+    "avatar": "IMG_9189.HEIC",
+    "image1": "IMG_9187.HEIC"
   },
   {
-    "heading": "Exceeded Expectations!",
-    "review": "Curabitur euismod, justo ac feugiat ullamcorper, magna erat tincidunt ex, at fermentum tortor turpis et purus. Ut feugiat velit eu urna auctor, eget scelerisque dolor feugiat. Sed ac mauris efficitur, pulvinar massa at, dictum odio.\n\nNunc convallis malesuada metus, nec rhoncus tortor dictum vel. Phasellus at magna sapien. Mauris facilisis, risus ut tincidunt dictum, tortor elit fermentum odio, ac vehicula nisl purus a enim.",
-    "name": "Taylor S.",
-    "date": "2024-02-20T00:00:00.000Z",
-    "avatar": "review4_2.jpg",
-    "image1": "review4_1.jpg",
-    "image2": "review4_2.jpg",
-    "image3": "review4_3.jpg"
-  },
-  {
-    "heading": "Amazing Atmosphere and Service!",
-    "review": "Nunc vel purus vitae libero pellentesque malesuada. Donec in odio et odio dapibus tincidunt. Ut ac dui ut nunc fermentum pellentesque.\n\nMauris vel lacus a ligula posuere cursus in nec sapien. Nullam id nunc at enim consequat suscipit. Nulla eu diam at felis blandit aliquet. Donec porta, orci in feugiat feugiat, lacus urna dapibus magna, sit amet tincidunt ligula purus at augue.\n\nEtiam dictum, lacus id venenatis accumsan, magna lectus efficitur ligula, non elementum eros urna at sapien. Vivamus eget arcu non justo rhoncus rhoncus sed non augue.",
-    "name": "Morgan D.",
-    "date": "2024-01-28T00:00:00.000Z",
-    "image1": "review5_1.jpg",
-    "image2": "review5_2.jpg"
+    "heading": "Transformed my hair",
+    "review": "Amazing service, absolutely transformed my hair from flat and dull colour to a nice bright blonde. Highly recommend Emma!",
+    "name": "Emma",
+    "date": "20/01/2025",
+    "avatar": "IMG_8191.HEIC",
+    "image1": "IMG_8182.HEIC"
   }
 ]
