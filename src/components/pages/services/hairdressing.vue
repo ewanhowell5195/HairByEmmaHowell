@@ -2,6 +2,7 @@
   import service from "@/assets/json/services/hairdressing.json"
   import ServiceInfo from "../../sections/ServiceInfo.vue"
   import CustomForm from "../../snippets/Form.vue"
+  import Gallery from "../../sections/Gallery.vue"
 
   service.heading = "Hairdressing"
   service.id = "hairdressing"
@@ -21,6 +22,20 @@
       </CustomForm>
     </div>
   </section>
+  <Gallery :images="[
+    '/assets/images/services/hairdressing/blonde.jpg',
+    '/assets/images/services/hairdressing/brown.jpg',
+    '/assets/images/services/hairdressing/outside.webp',
+    '/assets/images/services/hairdressing/red.jpg',
+    '/assets/images/services/hairdressing/blonde.jpg',
+    '/assets/images/services/hairdressing/brown.jpg',
+    '/assets/images/services/hairdressing/outside.webp',
+    '/assets/images/services/hairdressing/red.jpg',
+    '/assets/images/services/hairdressing/blonde.jpg',
+    '/assets/images/services/hairdressing/brown.jpg',
+    '/assets/images/services/hairdressing/outside.webp',
+    '/assets/images/services/hairdressing/red.jpg'
+  ]" />
 </template>
 
 <style scoped>
