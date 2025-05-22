@@ -22,7 +22,7 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    gap: 24px;
   }
 
   .image {
@@ -31,5 +31,12 @@
     display: block;
     object-fit: cover;
     border-radius: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+      gap: 16px;
+    }
   }
 </style>
