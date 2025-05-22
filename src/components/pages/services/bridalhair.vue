@@ -2,6 +2,7 @@
   import service from "@/assets/json/services/bridal_hair.json"
   import ServiceInfo from "../../sections/ServiceInfo.vue"
   import CustomForm from "../../snippets/Form.vue"
+  import Reviews from "../../sections/Reviews.vue"
   import Gallery from "../../sections/Gallery.vue"
 
   service.heading = "Bridal Hair"
@@ -26,6 +27,7 @@
       </CustomForm>
     </div>
   </section>
+  <Reviews service="bridalhair" />
   <Gallery :images="[
     '/assets/images/services/bridal_hair/blonde.webp',
     '/assets/images/services/bridal_hair/brown.jpg',

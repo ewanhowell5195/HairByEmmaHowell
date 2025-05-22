@@ -1,8 +1,19 @@
 <script setup>
+  import reviewsList from "@/assets/json/reviews.json"
   import "@splidejs/splide/dist/css/splide.min.css"
-  import reviews from "@/assets/json/reviews.json"
   import Splide from "@splidejs/splide"
   import { onMounted, ref } from "vue"
+
+  const props = defineProps({
+    service: {
+      type: String
+    }
+  })
+
+  let reviews = reviewsList
+  if (props.service) {
+    reviews = reviews.filter(e => e.service === props.service)
+  }
 
   const componentId = Math.random()
   const splide = ref(null)
@@ -36,10 +47,11 @@
       <div class="splide__track">
         <ul class="splide__list">
           <li v-for="(review, index) in reviews" :key="index" class="splide__slide">
+            <div v-if="!service" class="review-service">{{ review.service.replace("bridalhair", "bridal hair") }}</div>
             <h2>{{ review.heading }}</h2>
             <p class="review-content">{{ review.review }}</p>
             <div class="review-user">
-              <img v-if="review.avatar" :src="'/assets/images/reviews/' + review.avatar" alt="Avatar" class="avatar" with="56" height="56">
+              <img v-if="review.image1" :src="'/assets/images/reviews/' + review.image1" alt="Avatar" class="avatar" with="56" height="56">
               <i v-else class="avatar-fallback icon">person</i>
               <div class="review-user-details">
                 <div>{{ review.name }}</div>
@@ -76,6 +88,13 @@
     flex-direction: column;
   }
 
+  .review-service {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: -20px;
+    font-size: 14px;
+  }
+
   .review-content {
     font-weight: 600;
     white-space: pre-wrap;
@@ -108,6 +127,8 @@
 
   .avatar {
     border-radius: 50%;
+    width: 56px;
+    object-fit: cover;
   }
 
   .avatar-fallback {
