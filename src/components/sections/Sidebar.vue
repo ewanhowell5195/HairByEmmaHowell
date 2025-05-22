@@ -27,7 +27,7 @@
     position: fixed;
     inset: 0;
     background-color: #0008;
-    z-index: 2;
+    z-index: 49;
     opacity: 0;
     pointer-events: none;
     transition: opacity .25s ease;
@@ -44,11 +44,11 @@
     left: 0;
     top: var(--header-height);
     bottom: 0;
-    background-color: var(--color-primary);
+    background-color: #fff;
     width: 256px;
-    z-index: 3;
+    z-index: 51;
     transform: translateX(-100%);
-    transition: transform .25s ease, background-color .25s ease;
+    transition: transform .25s ease;
     display: flex;
     flex-direction: column;
     padding: 0 32px 32px;
@@ -57,11 +57,6 @@
 
     &.open {
       transform: initial;
-    }
-
-    * {
-      color: #fff;
-      transition: color .25s ease, background-color .25s ease;
     }
   }
 

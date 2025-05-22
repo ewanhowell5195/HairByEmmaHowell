@@ -3,7 +3,7 @@
     <div class="container">
       <div id="footer-upper">
         <router-link to="/" id="footer-logo">
-          <img src="/assets/images/logo/transparent_light.webp" alt="Logo" width="128" height="128">
+          <img src="/assets/images/logo/transparent.webp" alt="Logo" width="128" height="128">
         </router-link>
         <div class="footer-links">
           <div>Pages</div>
@@ -15,7 +15,7 @@
         <div class="footer-links">
           <div>Legal</div>
           <router-link to="/privacy">Privacy Policy</router-link>
-          <router-link to="/terms">Terms of Service</router-link>
+          <router-link to="/terms">Booking Terms</router-link>
         </div>
       </div>
       <hr>
@@ -31,10 +31,6 @@
 </template>
 
 <style scoped>
-  * {
-    color: #fff;
-  }
-
   footer {
     background-color: var(--color-primary);
   }
@@ -44,6 +40,7 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
+    margin-bottom: 40px;
   }
 
   #footer-upper {
@@ -66,11 +63,6 @@
     }
   }
 
-  hr {
-    opacity: 0.5;
-    width: 100%;
-  }
-
   #footer-copyright {
     opacity: 0.5;
     text-align: center;
@@ -82,7 +74,7 @@
 
     a {
       font-size: 20px;
-      border: 1px solid #fff;
+      border: 1px solid #000;
       width: 40px;
       height: 40px;
     }

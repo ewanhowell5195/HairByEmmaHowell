@@ -44,10 +44,18 @@
     <input type="hidden" name="redirect" ref="redirect" />
     <label for="name">Name</label>
     <input id="name" type="text" name="name" placeholder="Your Name" required @input="updateRedirect" />
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" placeholder="name@example.com" required />
+    <div class="form-row">
+      <div class="form-col">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" name="phone" placeholder="07123 456789" required />
+      </div>
+      <div class="form-col">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="name@example.com" required />
+      </div>
+    </div>
     <slot ref="slot" />
-    <button type="submit" :class="{ white: boxed }">Submit</button>
+    <button type="submit">Submit</button>
   </form>
 </template>
 
@@ -60,9 +68,7 @@
     &.boxed {
       outline: 2px solid var(--color-primary);
       padding: 16px;
-      border-radius: 24px;
       background-color: var(--color-background-primary);
-      color: #fff;
       margin-bottom: 20px;
     }
 
@@ -71,6 +77,26 @@
       margin-bottom: -8px;
       font-weight: 700;
       font-size: 18px;
+    }
+  }
+
+  .form-col, .form-row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .form-row {
+    flex-direction: row;
+  }
+
+  .form-col {
+    flex-direction: column;
+    flex: 1;
+  }
+
+  @media (max-width: 500px) {
+    .form-row {
+      flex-direction: column;
     }
   }
 </style>

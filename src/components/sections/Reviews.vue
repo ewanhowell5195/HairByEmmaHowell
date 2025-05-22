@@ -69,8 +69,7 @@
 
   .splide__slide {
     width: calc(100% / 3 - 24px * 2 / 3);
-    border-radius: 16px;
-    background-color: #fff;
+    background-color: var(--color-background-primary);
     padding: 16px 24px 24px;
     display: flex;
     gap: 16px;
@@ -115,7 +114,7 @@
     width: 56px;
     height: 56px;
     color: #fff;
-    background: var(--color-primary);
+    background: #000;
     font-size: 40px;
   }
 
@@ -125,11 +124,10 @@
     grid-auto-rows: 128px;
     gap: 12px;
 
-    img {
+    & img {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      border-radius: 12px;
       overflow: hidden;
     }
   }

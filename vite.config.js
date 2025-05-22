@@ -16,6 +16,9 @@ const getFiles = async function*(dir) {
 }
 
 export default defineConfig({
+  server: {
+    allowedHosts: ["0d1a-82-2-66-121.ngrok-free.app"]
+  },
   plugins: [
     vue(),
     {
@@ -49,7 +52,7 @@ function loadVueFile(filePath) {
 const defaults = {
   title: "Hair by Emma Howell",
   colour: "#2C2D2A",
-  description: "Hairdresser with 15 years experience, based in Row Town.",
+  description: "Hairdresser and Bridal Stylist based in Row Town, Surrey",
   image: "logo/logo.webp"
 }
 
@@ -91,7 +94,7 @@ async function buildOpenGraph() {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oooh+Baby&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 ${files}
   </head>
   <body>

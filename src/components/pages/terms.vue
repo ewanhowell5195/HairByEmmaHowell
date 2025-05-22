@@ -1,24 +1,18 @@
 <script>
   export default {
-    title: "Terms of Service",
-    description: "Read our terms of service."
+    title: "Booking Terms",
+    description: "Read my Booking Terms."
   }
 </script>
 
 <template>
   <div class="container">
-    <h1>Terms of Service</h1>
-    <p>
-      This is a placeholder Terms of Service. By using this website, you agree to the terms outlined here.
-    </p>
-    <p>
-      Services are provided as-is with no guarantees. We reserve the right to modify or discontinue services at any time.
-    </p>
-    <p>
-      Users are expected to use the site responsibly. Any misuse may result in access being revoked.
-    </p>
-    <p>
-      These terms may change without notice. Continued use of the site implies acceptance of the updated terms.
-    </p>
+    <h1 class="title">Booking Terms</h1>
+    <div>
+      <p>All bookings made with Hair by Emma Howell are subject to specific terms and conditions, which will be provided during the booking process.</p>
+      <p>These terms cover important information such as deposits, cancellations, travel fees, and other policies to ensure clarity and fairness for both parties.</p>
+      <p>By proceeding with a booking, you confirm that you agree to these terms once received and reviewed.</p>
+      <p>If you have any questions or would like a copy of the terms before booking, please get in touch by email at <a href="mailto:contact@hairbyemmahowell.co.uk">contact@hairbyemmahowell.co.uk</a>.</p>
+    </div>
   </div>
 </template>

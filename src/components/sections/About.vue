@@ -42,7 +42,6 @@
   section {
     flex-direction: row;
     justify-content: center;
-    text-align: center;
     align-items: center;
 
     > h1 {
@@ -64,11 +63,7 @@
     gap: 16px;
     padding: 20px;
     max-width: 512px;
-  }
-
-  :deep(p) {
-    font-family: Oooh Baby, Arial, serif;
-    font-size: 24px;
+    text-align: center;
   }
 
   :deep(.button) {

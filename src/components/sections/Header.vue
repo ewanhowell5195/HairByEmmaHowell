@@ -27,7 +27,6 @@
       <HamburgerButton v-model="sidebarOpen" />
       <router-link to="/" id="header-logo-link" @click="sidebarOpen = false">
         <img src="/assets/images/logo/transparent.webp" width="64" height="64">
-        <img src="/assets/images/logo/transparent_light.webp" width="64" height="64">
         <span>Hair by Emma Howell</span>
       </router-link>
       <div class="spacer"></div>
@@ -61,20 +60,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    transition: background-color .25s ease;
-
-    * {
-      color: #000;
-      transition: color .25s ease, background-color .25s ease;
-    }
-
-    &:not(.scrolled) + :deep(#sidebar) {
-      background-color: var(--color-background);
-
-      & * {
-        color: #000 !important;
-      }
-    }
+    transition: box-shadow .25s ease;
   }
 
   .header {
@@ -90,45 +76,15 @@
     text-decoration: none;
     gap: 16px;
 
-    & img {
-      transition: opacity .25s ease;
-    }
-
-    & img:nth-child(2) {
-      margin-left: -80px;
-      opacity: 0;
-    }
-
     & span {
       font-family: var(--font-heading) !important;
       font-size: 40px;
-      color: var(--color-primary);
       margin-top: 7px;
     }
   }
 
   header.scrolled {
-    background-color: var(--color-primary);
-
-    * {
-      color: #fff;
-    }
-
-    & a::before {
-      background-color: #fff;
-    }
-
-    #header-logo-link span {
-      color: var(--color-background);
-    }
-
-    #header-logo-link img {
-      opacity: 0;
-    }
-
-    #header-logo-link img:nth-child(2) {
-      opacity: 1;
-    }
+    box-shadow: var(--box-shadow);
   }
 
   .spacer {

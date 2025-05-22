@@ -33,29 +33,35 @@
       <textarea id="message" name="message" placeholder="Your Message" required></textarea>
     </CustomForm>
 
-    <h2>Direct Contact</h2>
-    <p>
-      <span class="icon">call</span>
-      <a href="tel:+447791697744">+44 7791 697744</a>
-    </p>
-    <p>
-      <span class="icon">mail</span>
-      <a href="mailto:contact@hairbyemmahowell.co.uk">contact@hairbyemmahowell.co.uk</a>
-    </p>
+    <div id="contact-links">
+      <div class="contact-links">
+        <h2>Direct Contact</h2>
+        <p>
+          <span class="icon">call</span>
+          <a href="tel:+447791697744">+44 7791 697744</a>
+        </p>
+        <p>
+          <span class="icon">mail</span>
+          <a href="mailto:contact@hairbyemmahowell.co.uk">contact@hairbyemmahowell.co.uk</a>
+        </p>
+      </div>
 
-    <h2>Social Media</h2>
-    <p>
-      <span class="fa fa-instagram"></span>
-      <a href="https://www.instagram.com/hairby_emmahowell_/" target="_blank">@hairby_emmahowell_</a>
-    </p>
-    <p>
-      <span class="fa fa-instagram"></span>
-      <a href="https://www.instagram.com/bridalhairby_emmahowell/" target="_blank">@bridalhairby_emmahowell</a>
-    </p>
-    <p>
-      <span class="fa fa-facebook"></span>
-      <a href="https://www.facebook.com/people/Hair-by-Emma-Howell/61559965659213/" target="_blank">Hair by Emma Howell</a>
-    </p>
+      <div class="contact-links">
+        <h2>Social Media</h2>
+        <p>
+          <span class="fa fa-instagram"></span>
+          <a href="https://www.instagram.com/hairby_emmahowell_/" target="_blank">@hairby_emmahowell_</a>
+        </p>
+        <p>
+          <span class="fa fa-instagram"></span>
+          <a href="https://www.instagram.com/bridalhairby_emmahowell/" target="_blank">@bridalhairby_emmahowell</a>
+        </p>
+        <p>
+          <span class="fa fa-facebook"></span>
+          <a href="https://www.facebook.com/people/Hair-by-Emma-Howell/61559965659213/" target="_blank">Hair by Emma Howell</a>
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -73,5 +79,21 @@
 
   span {
     font-size: 28px;
+  }
+
+  #contact-links {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    & h2 {
+      margin-bottom: 0;
+    }
   }
 </style>

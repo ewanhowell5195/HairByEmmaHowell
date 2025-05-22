@@ -80,36 +80,26 @@
     max-width: 100%;
   }
 
-  .splide {
-    overflow: hidden;
-  }
+  #service-info-carousel .splide__slide {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
 
-  #service-info-carousel {
-    border-radius: 24px;
-    
-    .splide__slide {
-      display: flex;
-      align-items: center;
-      position: relative;
-      width: 100%;
-
-      & img {
-        max-width: 100%;
-      }
-    } 
+    & img {
+      max-width: 100%;
+    }
   }
 
   #service-info-thumbnails {
     max-width: 100%;
 
     .splide__slide {
-      border-radius: 12px;
-      overflow: hidden;
       border: 2px solid transparent;
       transition: border .15s ease;
 
       &.is-active {
-        border: 2px solid var(--color-primary);
+        border: 2px solid #000;
       }
     }
   }

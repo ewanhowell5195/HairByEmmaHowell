@@ -42,7 +42,6 @@
   .banner-content {
     align-items: center;
     justify-content: center;
-    color: #fff;
     height: 100%;
     margin: 0 auto;
     padding: 40px;
@@ -64,6 +63,10 @@
   :deep(p) {
     max-width: 620px;
     font-size: 20px;
+  }
+
+  :deep(*) {
+    color: #fff;
   }
 
   @media (max-width: 768px) {

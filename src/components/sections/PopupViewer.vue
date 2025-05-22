@@ -41,7 +41,16 @@
         }
         if (!element) return
         const value = element.getAttribute("popupable")
-        this.images = Array.from(document.querySelectorAll(`[popupable="${value}"]`)).filter(e => !e.closest('[id*="clone"]'))
+        this.images = Array.from(document.querySelectorAll(`[popupable="${value}"]`)).filter(el => {
+          if (el.closest('[id*="clone"]')) return false
+          let node = el
+          while (node && node !== document.body) {
+            const style = getComputedStyle(node)
+            if (style.display === "none" || style.visibility === "hidden") return false
+            node = node.parentElement
+          }
+          return true
+        })
         if (this.images.length === 1) {
           this.$refs.prev.hidden = true
           this.$refs.next.hidden = true
@@ -132,7 +141,7 @@
   .popup {
     position: fixed;
     inset: 0;
-    background-color: #000000C0;
+    background-color: #ffffffC0;
     z-index: 99;
     display: flex;
     justify-content: center;
@@ -146,7 +155,7 @@
   .popup-container {
     position: relative;
     user-select: none;
-    box-shadow: 0 8px 16px #000;
+    box-shadow: 0 8px 16px #0008;
     max-width: calc(100vw - 92px * 2);
     max-height: calc(100dvh - 92px * 2);
     overflow: hidden;
@@ -174,7 +183,6 @@
   }
 
   #popup-image-count {
-    color: #fff;
     position: absolute;
     top: 46px;
     left: 50%;
