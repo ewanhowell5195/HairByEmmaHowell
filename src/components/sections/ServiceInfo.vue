@@ -1,6 +1,7 @@
 <script setup>
   import PriceList from "../sections/PriceList.vue"
   import "@splidejs/splide/dist/css/splide.min.css"
+  import Markdown from "../snippets/Markdown.vue"
   import Splide from "@splidejs/splide"
   import { onMounted, ref } from "vue"
 
@@ -55,7 +56,7 @@
     </div>
     <div id="service-info-right">
       <h1>{{ service.heading }}</h1>
-      <p>{{ service.description }}</p>
+      <Markdown :content="service.description" />
       <PriceList :pricelist="service.price_list" />
     </div>
   </section>

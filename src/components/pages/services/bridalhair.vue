@@ -12,15 +12,17 @@
   <ServiceInfo :service="service" />
   <section class="contrast">
     <div class="container">
-      <h1>Enquire About Bridal Hair Booking</h1>
-      <p>Fill out the form below to enquire about a bridal hair booking. While I aim to accommodate your wedding date, availability cannot be guaranteed as existing bookings are not displayed.</p>
+      <h1>Bridal Enquiry Form</h1>
+      <p>Contact Emma here for your bridal hairstyling and to check availability of your date.</p>
       <CustomForm boxed>
-        <label for="date">Wedding Date</label>
+        <label for="date">Event Date</label>
         <input id="datetime" name="datetime" type="text" placeholder="Select wedding date…" required />
-        <label for="how-many">How many people require hair styling on your wedding day?</label>
+        <label for="how-many">How many people require hair styling on your wedding day? <span style="opacity: .5;">(Including the bride)</span></label>
         <input id="how-many" name="how-many" placeholder="How many people?" type="number" min="1" required>
-        <label for="location">Wedding location?</label>
+        <label for="location">Event location?</label>
         <input id="location" name="location" placeholder="Location" type="text" required>
+        <label for="where-ready">Where are you getting ready?</label>
+        <input id="where-ready" name="where-ready" placeholder="I am getting ready at..." type="text" required>
       </CustomForm>
     </div>
   </section>

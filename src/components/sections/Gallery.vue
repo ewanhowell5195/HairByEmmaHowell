@@ -7,7 +7,6 @@
   })
 
   const componentId = Math.random()
-  console.log(componentId)
 </script>
 
 <template>

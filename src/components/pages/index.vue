@@ -2,9 +2,10 @@
   import hairdressing from "@/assets/json/services/hairdressing.json"
   import bridalHair from "@/assets/json/services/bridal_hair.json"
   import ContentWithImage from "../sections/ContentWithImage.vue"
+  import AboutSection from "../sections/About.vue"
   import Reviews from "../sections/Reviews.vue"
   import Banner from "../sections/Banner.vue"
-  import About from "../sections/About.vue"
+  import about from "@/assets/json/about.json"
 
   function scrollToServices() {
     document.getElementById("services").scrollIntoView({ behavior: "smooth" })
@@ -17,12 +18,9 @@
     <p>Hairdresser with 15 years experience, based in Row Town. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nisl vel quam dapibus tempus.</p>
     <button @click="scrollToServices" class="white">View Services</button>
   </Banner>
-  <About heading="About Me" image="/assets/images/about/emma.webp">
-    <p>I’m Emma, and I am a hairdresser based in my home salon in Row Town! I have been a hairdresser for 15 years with 10 of those years in a salon.</p>
-    <router-link to="/about" class="button">Learn More</router-link>
-  </About>
+  <AboutSection heading="About Me" image="/assets/images/about/emma.webp" :content="about.short" :link="true" />
   <div id="services">
-    <h1 class="container">My Services</h1>
+    <h1 class="container">Services</h1>
     <hr>
     <ContentWithImage heading="Hairdressing" :image="hairdressing.images.map(e => `/assets/images/services/hairdressing/${e}`)">
       <p>{{ hairdressing.description }}</p>

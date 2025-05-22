@@ -1,4 +1,6 @@
 <script setup>
+  import Markdown from "../snippets/Markdown.vue"
+
   defineProps({
     image: {
       type: String,
@@ -6,6 +8,15 @@
     },
     heading: {
       type: String
+    },
+    content: {
+      type: String
+    },
+    more: {
+      type: String
+    },
+    link: {
+      type: Boolean
     }
   })
 </script>
@@ -16,7 +27,13 @@
     <img :src="image" popupable width="256" height="256" />
     <div class="content">
       <h1 v-if="heading">{{ heading }}</h1>
-      <slot></slot>
+      <Markdown :content="content" />
+      <router-link v-if="link" to="/about" class="button">Learn More</router-link>
+    </div>
+  </section>
+  <section v-if="more" class="container">
+    <div class="more-content">
+      <Markdown :content="more" />
     </div>
   </section>
 </template>
@@ -26,6 +43,7 @@
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    align-items: center;
 
     > h1 {
       display: none;
