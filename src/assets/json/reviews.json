@@ -16,8 +16,9 @@
     "review": "I recommend Emma to anyone; she is amazing! She is friendly, professional, takes the time to understand what you want to achieve and is very mindful of your time; great for fitting in a quick hair cut in your lunch break! She has cut and coloured my hair, as well as curled it for recent weddings I’ve attended, and I’m always blown away by what she is able to achieve.",
     "name": "Emily",
     "date": "2024-03-12T00:00:00.000Z",
-    "avatar": "IMG_1138.HEIC",
-    "image1": "IMG_1146.HEIC"
+    "avatar": "IMG_1138.jpg",
+    "image1": "IMG_1138.jpg",
+    "image2": "IMG_1146.jpg"
   },
   {
     "service": "hairdressing",
@@ -25,8 +26,9 @@
     "review": "I had such a lovely experience today after meeting Emma. I finally have the hair colour I really wanted and needed! She worked so hard to get my perfect shade, and it was such a great experience. ",
     "name": "Sanaz",
     "date": "22/02/2025",
-    "avatar": "IMG_9189.HEIC",
-    "image1": "IMG_9187.HEIC"
+    "avatar": "IMG_9189.jpg",
+    "image1": "IMG_9189.jpg",
+    "image2": "IMG_9187.jpg"
   },
   {
     "service": "bridalhair",
@@ -34,7 +36,8 @@
     "review": "Amazing service, absolutely transformed my hair from flat and dull colour to a nice bright blonde. Highly recommend Emma!",
     "name": "Emma",
     "date": "20/01/2025",
-    "avatar": "IMG_8191.HEIC",
-    "image1": "IMG_8182.HEIC"
+    "avatar": "IMG_8191.jpg",
+    "image1": "IMG_8191.jpg",
+    "image2": "IMG_8182.jpg"
   }
 ]
