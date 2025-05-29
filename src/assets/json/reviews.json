@@ -28,12 +28,21 @@
     "image2": "IMG_9187.jpg"
   },
   {
-    "service": "bridalhair",
+    "service": "hairdressing",
     "heading": "Transformed my hair",
     "review": "Amazing service, absolutely transformed my hair from flat and dull colour to a nice bright blonde. Highly recommend Emma!",
     "name": "Emma",
     "date": "20/01/2025",
     "image1": "IMG_8191.jpg",
     "image2": "IMG_8182.jpg"
+  },
+  {
+    "service": "hairdressing",
+    "heading": "10/10 experience",
+    "review": "Emma had her work cut out with my hair as it is super thick and long, but she creates a lovely, relaxed environment which made the 6 hour job enjoyable. I had a full head of balayage highlights, a toner, a cut and a bouncy blowdry - the whole shabang! I showed her pictures of my desired style and she matched them exactly. I couldn’t recommend her more ! 10/10 experience",
+    "name": "Nicky",
+    "date": "27/05/2025",
+    "image1": "nicky hair 2.webp",
+    "image2": "Nicky hair.webp"
   }
 ]
