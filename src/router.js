@@ -31,6 +31,44 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
+  const expiry = parseInt(localStorage.getItem("gh_token_expiry") || "0")
+  if (Date.now() > expiry) {
+    localStorage.removeItem("gh_token")
+    localStorage.removeItem("gh_token_expiry")
+  }
+
+  const tokenInStorage = localStorage.getItem("gh_token")
+  const isAdminRoute = to.path.startsWith("/admin")
+  const hashParams = new URLSearchParams(window.location.hash.slice(1))
+  const tokenFromHash = hashParams.get("token")
+  const accessDenied = hashParams.get("access") === "denied"
+
+  if (isAdminRoute && (tokenFromHash || accessDenied)) {
+    const cleanURL = window.location.pathname + window.location.search
+    window.history.replaceState({}, "", cleanURL)
+
+    if (tokenFromHash) {
+      localStorage.setItem("gh_token", tokenFromHash)
+      localStorage.setItem("gh_token_expiry", Date.now() + 1000 * 60 * 60 * 24)
+      next({
+        path: to.path,
+        query: to.query,
+        replace: true
+      })
+      return
+    }
+
+    if (accessDenied) {
+      next({ path: "/admin/denied", replace: true })
+      return
+    }
+  }
+
+  if (isAdminRoute && !tokenInStorage) {
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}&scope=repo`
+    return
+  }
+
   const components = to.matched[to.matched.length - 1].components
   if (typeof components.default === "function") {
     components.default = (await components.default()).default
