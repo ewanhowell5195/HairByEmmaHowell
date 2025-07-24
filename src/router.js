@@ -41,9 +41,8 @@ router.beforeEach(async (to, from, next) => {
   const isAdminRoute = to.path.startsWith("/admin")
   const hashParams = new URLSearchParams(window.location.hash.slice(1))
   const tokenFromHash = hashParams.get("token")
-  const accessDenied = hashParams.get("access") === "denied"
 
-  if (isAdminRoute && (tokenFromHash || accessDenied)) {
+  if (isAdminRoute && tokenFromHash) {
     const cleanURL = window.location.pathname + window.location.search
     window.history.replaceState({}, "", cleanURL)
 
@@ -57,16 +56,20 @@ router.beforeEach(async (to, from, next) => {
       })
       return
     }
-
-    if (accessDenied) {
-      next({ path: "/admin/denied", replace: true })
-      return
-    }
   }
 
-  if (isAdminRoute && !tokenInStorage) {
+  console.log(to.path)
+
+  if (isAdminRoute && !tokenInStorage && to.path !== "/admin/denied") {
     window.location.href = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}&scope=repo`
     return
+  }
+
+  if (to.path === "/admin/denied" && tokenInStorage) {
+    next({
+      path: "/admin",
+      query: to.query
+    })
   }
 
   const components = to.matched[to.matched.length - 1].components
