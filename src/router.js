@@ -43,9 +43,6 @@ router.beforeEach(async (to, from, next) => {
   const tokenFromHash = hashParams.get("token")
 
   if (isAdminRoute && tokenFromHash) {
-    const cleanURL = window.location.pathname + window.location.search
-    window.history.replaceState({}, "", cleanURL)
-
     if (tokenFromHash) {
       localStorage.setItem("gh_token", tokenFromHash)
       localStorage.setItem("gh_token_expiry", Date.now() + 1000 * 60 * 60 * 24)
@@ -58,15 +55,13 @@ router.beforeEach(async (to, from, next) => {
     }
   }
 
-  console.log(to.path)
-
   if (isAdminRoute && !tokenInStorage && to.path !== "/admin/denied") {
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}&scope=repo`
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}`
     return
   }
 
   if (to.path === "/admin/denied" && tokenInStorage) {
-    next({
+    return next({
       path: "/admin",
       query: to.query
     })
