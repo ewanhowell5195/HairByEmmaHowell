@@ -55,8 +55,10 @@ router.beforeEach(async (to, from, next) => {
     }
   }
 
+  console.log(isAdminRoute, !tokenInStorage, to.path, to.path !== "/admin/denied")
   if (isAdminRoute && !tokenInStorage && to.path !== "/admin/denied") {
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}`
+    // window.location.href = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}`
+    console.log("BRUHHH")
     return
   }
 
