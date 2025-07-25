@@ -44,6 +44,7 @@ router.beforeEach(async (to, from, next) => {
 
   if (isAdminRoute && tokenFromHash) {
     if (tokenFromHash) {
+      window.history.replaceState({}, "", window.location.pathname + window.location.search)
       localStorage.setItem("gh_token", tokenFromHash)
       localStorage.setItem("gh_token_expiry", Date.now() + 1000 * 60 * 60 * 24)
       next({
@@ -60,7 +61,7 @@ router.beforeEach(async (to, from, next) => {
     return
   }
 
-  if (!to.path.match(/^\/admin\/denied\/?$/) && tokenInStorage) {
+  if (isAdminRoute && to.path.match(/^\/admin\/denied\/?$/) && tokenInStorage) {
     return next({
       path: "/admin",
       query: to.query
