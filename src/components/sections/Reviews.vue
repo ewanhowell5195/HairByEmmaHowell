@@ -19,12 +19,7 @@
   const splide = ref(null)
 
   function formatDate(str) {
-    let date
-    if (/^\d{2}\/\d{2}\/\d{2,4}$/.test(str)) {
-      date = new Date(str.split("/").reverse().join("-"))
-    } else {
-      date = new Date(str)
-    }
+    const date = new Date(str.split("/").reverse().join("-"))
     return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
   }
 
@@ -58,11 +53,8 @@
                 <div>{{ formatDate(review.date) }}</div>
               </div>
             </div>
-            <div :class="['review-images', `review-images-${['image1', 'image2', 'image3', 'image4'].filter(key => review[key]).length}`, `review-image-rows-${reviews.some(r => ['image1', 'image2', 'image3', 'image4'].filter(key => r[key]).length === 3) ? 2 : 1}`]">
-              <img v-if="review.image1" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + review.image1" alt="Review Image">
-              <img v-if="review.image2" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + review.image2" alt="Review Image">
-              <img v-if="review.image3" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + review.image3" alt="Review Image">
-              <img v-if="review.image4" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + review.image4" alt="Review Image">
+            <div :class="['review-images', `review-images-${review.images?.length || 0}`, `review-image-rows-${reviews.some(r => r.images?.length === 3) ? 2 : 1}`]">
+              <img v-for="(img, i) in review.images" :key="i" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + img" alt="Review Image">
             </div>
           </li>
         </ul>
