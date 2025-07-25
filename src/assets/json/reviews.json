@@ -4,7 +4,7 @@
     "heading": "Excellent",
     "review": "I recently visited Emma’s at-home salon for a cut and colour, and it was an incredible experience.\n\nFrom the start, Emma made me feel completely comfortable, creating a warm and welcoming atmosphere. She listened carefully to the style I wanted and never made me feel like I was asking too much, even with my request for a more time-consuming colour trend!\n\nThe results were absolutely beautiful, exactly as I envisioned. Emma’s patience, attention to detail, and professionalism truly set her apart. I will definitely be returning and highly recommend her services!",
     "name": "Ella",
-    "date": "14/10/2024",
+    "date": 1728864000000,
     "image1": "review1_1.jpg",
     "image2": "review1_2.jpg",
     "image3": "review1_3.jpg"
@@ -14,7 +14,7 @@
     "heading": "Amazing",
     "review": "I recommend Emma to anyone; she is amazing! She is friendly, professional, takes the time to understand what you want to achieve and is very mindful of your time; great for fitting in a quick hair cut in your lunch break! She has cut and coloured my hair, as well as curled it for recent weddings I’ve attended, and I’m always blown away by what she is able to achieve.",
     "name": "Emily",
-    "date": "2024-03-12T00:00:00.000Z",
+    "date": 1710201600000,
     "image1": "IMG_1138.jpg",
     "image2": "IMG_1146.jpg"
   },
@@ -23,7 +23,7 @@
     "heading": "Highly Recommend!",
     "review": "I had such a lovely experience today after meeting Emma. I finally have the hair colour I really wanted and needed! She worked so hard to get my perfect shade, and it was such a great experience. ",
     "name": "Sanaz",
-    "date": "22/02/2025",
+    "date": 1740182400000,
     "image1": "IMG_9189.jpg",
     "image2": "IMG_9187.jpg"
   },
@@ -32,7 +32,7 @@
     "heading": "Transformed my hair",
     "review": "Amazing service, absolutely transformed my hair from flat and dull colour to a nice bright blonde. Highly recommend Emma!",
     "name": "Emma",
-    "date": "20/01/2025",
+    "date": 1737331200000,
     "image1": "IMG_8191.jpg",
     "image2": "IMG_8182.jpg"
   },
@@ -41,7 +41,7 @@
     "heading": "10/10 experience",
     "review": "Emma had her work cut out with my hair as it is super thick and long, but she creates a lovely, relaxed environment which made the 6 hour job enjoyable. I had a full head of balayage highlights, a toner, a cut and a bouncy blowdry - the whole shabang! I showed her pictures of my desired style and she matched them exactly. I couldn’t recommend her more ! 10/10 experience",
     "name": "Nicky",
-    "date": "27/05/2025",
+    "date": 1748284800000,
     "image1": "nicky hair 2.webp",
     "image2": "Nicky hair.webp"
   }
