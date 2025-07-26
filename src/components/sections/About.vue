@@ -1,6 +1,4 @@
 <script setup>
-  import Markdown from "../snippets/Markdown.vue"
-
   defineProps({
     content: {
       type: String
@@ -18,14 +16,12 @@
   <section class="container">
     <img src="/assets/images/about/about.webp" popupable width="256" height="256" />
     <div class="content">
-      <Markdown :content="content" />
+      <div v-html="content"></div>
       <router-link v-if="link" to="/about" class="button">Learn More</router-link>
     </div>
   </section>
   <section v-if="more" class="container">
-    <div class="more-content">
-      <Markdown :content="more" />
-    </div>
+    <div class="more-content" v-html="more"></div>
   </section>
 </template>
 
