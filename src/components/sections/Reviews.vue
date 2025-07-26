@@ -24,11 +24,13 @@
   }
 
   onMounted(() => {
-    new Splide(splide.value, {
-      gap: "24px",
-      autoWidth: true,
-      arrows: false
-    }).mount()
+    if (splide.value) {
+      new Splide(splide.value, {
+        gap: "24px",
+        autoWidth: true,
+        arrows: false
+      }).mount()
+    }
   })
 </script>
 
@@ -38,7 +40,7 @@
       <h1>Customer Reviews</h1>
       <a class="button desktop" :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" target="_blank"><i class="icon">edit</i> Write a review</a>
     </div>
-    <div ref="splide" class="splide pagination-below">
+    <div v-if="reviews.length" ref="splide" class="splide pagination-below">
       <div class="splide__track">
         <ul class="splide__list">
           <li v-for="(review, index) in reviews" :key="index" class="splide__slide">
@@ -60,6 +62,8 @@
         </ul>
       </div>
     </div>
+    <div v-else-if="service">There are currently no reviews for the {{ service.replace("bridalhair", "bridal hair") }} service, but you can be the first!</div>
+    <div v-else>There are currently no reviews, but you can be the first!</div>
     <a class="button mobile" :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" target="_blank"><i class="icon">edit</i> Write a review</a>
   </section>
 </template>
