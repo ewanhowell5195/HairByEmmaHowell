@@ -60,6 +60,9 @@
     "heading": "New Review",
     "review": "This is a new review.",
     "name": "Name",
-    "date": "26/07/2025"
+    "date": "26/07/2025",
+    "images": [
+      "78a0251e803654d8d12de5eb8828759a.png"
+    ]
   }
 ]
