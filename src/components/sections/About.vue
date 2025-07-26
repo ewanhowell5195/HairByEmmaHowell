@@ -2,13 +2,6 @@
   import Markdown from "../snippets/Markdown.vue"
 
   defineProps({
-    image: {
-      type: String,
-      required: true
-    },
-    heading: {
-      type: String
-    },
     content: {
       type: String
     },
@@ -23,10 +16,8 @@
 
 <template>
   <section class="container">
-    <h1 v-if="heading">{{ heading }}</h1>
-    <img :src="image" popupable width="256" height="256" />
+    <img src="/assets/images/about/about.webp" popupable width="256" height="256" />
     <div class="content">
-      <h1 v-if="heading">{{ heading }}</h1>
       <Markdown :content="content" />
       <router-link v-if="link" to="/about" class="button">Learn More</router-link>
     </div>
@@ -64,6 +55,10 @@
     padding: 20px;
     max-width: 512px;
     text-align: center;
+
+    * {
+      text-align: center;
+    }
   }
 
   :deep(.button) {

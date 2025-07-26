@@ -237,6 +237,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 16px;
   }
 
   #reviews {
@@ -396,6 +397,15 @@
   }
 
   @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      align-items: flex-start;
+
+      & button {
+        align-self: flex-end;
+      }
+    }
+
     .review > .form-row {
       flex-direction: column-reverse;
     }

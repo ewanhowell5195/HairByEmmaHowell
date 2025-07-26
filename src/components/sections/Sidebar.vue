@@ -18,6 +18,8 @@
     <router-link to="/about" @click="closeSidebar">About</router-link>
     <router-link to="/reviews" @click="closeSidebar">Reviews</router-link>
     <router-link to="/contact" @click="closeSidebar">Contact</router-link>
+    <div class="spacer"></div>
+    <router-link to="/admin" @click="closeSidebar">Admin</router-link>
   </div>
   <div id="sidebar-content-overlay" :class="{ visible: modelValue }" @click="closeSidebar"></div>
 </template>
@@ -80,6 +82,10 @@
     &:hover::before {
       width: 100%;
     }
+  }
+
+  .spacer {
+    margin-top: -8px;
   }
 
   @media (max-width: 768px) {
