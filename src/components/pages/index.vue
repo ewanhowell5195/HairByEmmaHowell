@@ -19,7 +19,7 @@
       <p>Hairdresser and Bridal Stylist based in Row Town, Surrey</p>
       <button @click="scrollToServices" class="white">View Services</button>
     </Banner>
-    <AboutSection :content="about.short" :link="true" />
+    <AboutSection :content="about.intro" :link="true" />
     <div id="services">
       <h1 class="container">Services</h1>
       <hr>
