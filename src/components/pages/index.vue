@@ -5,7 +5,6 @@
   import AboutSection from "../sections/About.vue"
   import Reviews from "../sections/Reviews.vue"
   import Banner from "../sections/Banner.vue"
-  import about from "@/assets/json/about.json"
 
   function scrollToServices() {
     document.getElementById("services").scrollIntoView({ behavior: "smooth" })
@@ -19,7 +18,7 @@
       <p>Hairdresser and Bridal Stylist based in Row Town, Surrey</p>
       <button @click="scrollToServices" class="white">View Services</button>
     </Banner>
-    <AboutSection :content="about.intro" :link="true" />
+    <AboutSection :link="true" />
     <div id="services">
       <h1 class="container">Services</h1>
       <hr>

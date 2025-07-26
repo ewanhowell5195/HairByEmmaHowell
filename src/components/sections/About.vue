@@ -1,10 +1,9 @@
 <script setup>
+  import about from "@/assets/json/about.json"
+
   defineProps({
-    content: {
-      type: String
-    },
-    more: {
-      type: String
+    extra: {
+      type: Boolean
     },
     link: {
       type: Boolean
@@ -14,14 +13,14 @@
 
 <template>
   <section class="container">
-    <img src="/assets/images/about/about.webp" popupable width="256" height="256" />
+    <img :src="'/assets/images/about/' + about.image" popupable width="256" height="256" />
     <div class="content">
-      <div v-html="content"></div>
+      <div v-html="about.intro"></div>
       <router-link v-if="link" to="/about" class="button">Learn More</router-link>
     </div>
   </section>
-  <section v-if="more" class="container">
-    <div class="more-content" v-html="more"></div>
+  <section v-if="extra" class="container">
+    <div class="more-content" v-html="about.extra"></div>
   </section>
 </template>
 
