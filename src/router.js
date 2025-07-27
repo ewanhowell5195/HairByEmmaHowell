@@ -71,6 +71,13 @@ router.beforeEach(async (to, from, next) => {
   }
   const title = components.default.title ?? to.name.split("/").at(-1).replace(/([a-z0-9])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())
   document.title = title !== "Index" ? `${title} | Hair by Emma Howell` : "Hair by Emma Howell"
+  
+  if (typeof gtag === "function") {
+    gtag("event", "page_view", {
+      page_path: to.fullPath
+    })
+  }
+
   next()
 })
 
