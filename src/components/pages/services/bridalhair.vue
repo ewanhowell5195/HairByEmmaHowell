@@ -28,7 +28,7 @@
         </CustomForm>
       </div>
     </section>
-    <Reviews service="bridalhair" />
+    <Reviews service="bridal_hair" />
     <Gallery :images="[
       '/assets/images/services/bridal_hair/blonde.webp',
       '/assets/images/services/bridal_hair/brown.jpg',

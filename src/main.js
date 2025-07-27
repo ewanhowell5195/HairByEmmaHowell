@@ -3,6 +3,8 @@ import settings from "./settings.json"
 import App from "./App.vue"
 import router from "./router"
 import "./styles.css"
+import "easy-tooltips/styles.css"
+import "easy-tooltips"
 
 const app = createApp(App)
 

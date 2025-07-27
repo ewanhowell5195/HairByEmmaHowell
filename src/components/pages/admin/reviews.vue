@@ -85,7 +85,7 @@
     }
   }
 
-  async function saveReviews() {
+  async function saveUpdates() {
     if (state.value === "saving") return
     if (!confirm("Are you sure you want to save the review changes?")) return
     state.value = "saving"
@@ -93,7 +93,7 @@
     let imageNames = reviews.flatMap(r => r.images ?? [])
 
     if (imageNames.length !== originalImageSet.size || imageNames.some(name => !originalImageSet.has(name))) {
-      let newImages = new Map
+      const newImages = new Map
 
       for (const review of reviews) {
         if (review.images) {
@@ -161,7 +161,7 @@
         <h1>Manage Reviews</h1>
         <p>After saving, changes may take a couple minutes to appear.</p>
       </div>
-      <button @click="saveReviews" :disabled="!hasUnsavedChanges || state === 'saving'"><span class="icon">save</span>Save Reviews</button>
+      <button @click="saveUpdates" :disabled="!hasUnsavedChanges || state === 'saving'"><span class="icon">save</span>Save Updates</button>
     </div>
 
     <div id="reviews">
@@ -174,28 +174,28 @@
               <div class="form-row">
                 <div class="form-col">
                   <label for="heading">Heading</label>
-                  <input id="heading" type="text" v-model="review.heading" placeholder="Review heading" required />
+                  <input id="heading" type="text" v-model="review.heading" placeholder="Review heading" />
                 </div>
                 <div class="form-col">
                   <label for="service">Service</label>
-                  <select id="service" v-model="review.service" required>
+                  <select id="service" v-model="review.service">
                     <option value="hairdressing">Hairdressing</option>
-                    <option value="bridalhair">Bridal Hair</option>
+                    <option value="bridal_hair">Bridal Hair</option>
                   </select>
                 </div>
               </div>
 
               <label for="review">Review</label>
-              <textarea id="review" v-model="review.review" placeholder="Full review text" required rows="5"></textarea>
+              <textarea id="review" v-model="review.review" placeholder="Full review text" rows="5"></textarea>
 
               <div class="form-row">
                 <div class="form-col">
                   <label for="name">Name</label>
-                  <input id="name" type="text" v-model="review.name" placeholder="Customer name" required />
+                  <input id="name" type="text" v-model="review.name" placeholder="Customer name" />
                 </div>
                 <div class="form-col">
                   <label for="date">Date</label>
-                  <input id="date" name="date" type="text" v-model="review.date" placeholder="Select a date…" required />
+                  <input id="date" name="date" type="text" v-model="review.date" placeholder="Select a date…" />
                 </div>
               </div>
 
@@ -203,24 +203,24 @@
               <div class="review-images">
                 <div v-for="i in [0, 1, 2, 3]" :key="i" :class="['review-image', { last: review.images?.[i] && i === review.images.findLastIndex(img => !!img), input: !review.images?.[i] && i > (review.images?.findLastIndex(img => !!img) ?? -1) }]">
                   <template v-if="review.images?.[i]">
-                    <img :popupable="`review-${index}`" :src="review.images[i]?.startsWith('data:') ? review.images[i] : `https://raw.githubusercontent.com/ewanhowell5195/HairByEmmaHowell/master/public/assets/images/reviews/${review.images[i]}`" alt="Review Image" />
+                    <img :popupable="`review-${index}`" :src="review.images[i]?.startsWith('data:') ? review.images[i] : `https://raw.githubusercontent.com/ewanhowell5195/HairByEmmaHowell/master/public/assets/images/reviews/${review.images[i]}`" />
                     <div class="review-image-footer">
-                      <span class="icon" @click="moveImagePrev(index, i)">keyboard_arrow_left</span>
-                      <span class="icon" @click="deleteImage(index, i)">delete</span>
-                      <span class="icon" @click="moveImageNext(index, i)">keyboard_arrow_right</span>
+                      <span data-tooltip="Move Previous" class="icon" @click="moveImagePrev(index, i)">keyboard_arrow_left</span>
+                      <span data-tooltip="Delete Image" class="icon" @click="deleteImage(index, i)">delete</span>
+                      <span data-tooltip="Move Next" class="icon" @click="moveImageNext(index, i)">keyboard_arrow_right</span>
                     </div>
                   </template>
                   <template v-else>
-                    <input type="file" accept="image/webp,image/jpeg,image/png" @change="e => handleImageInput(e, review)" />
+                    <input type="file" title="" accept="image/webp,image/jpeg,image/png" @change="e => handleImageInput(e, review)" />
                     <div class="icon new-review-image">add</div>
                   </template>
                 </div>
               </div>
             </div>
             <div class="review-controls">
-              <button type="button" class="icon" @click="movePrev(index)">keyboard_arrow_up</button>
-              <button type="button" class="icon" @click="deleteReview(index)">delete</button>
-              <button type="button" class="icon" @click="moveNext(index)">keyboard_arrow_down</button>
+              <button data-tooltip="Move Previous" type="button" class="icon" @click="movePrev(index)">keyboard_arrow_up</button>
+              <button data-tooltip="Delete Review" type="button" class="icon" @click="deleteReview(index)">delete</button>
+              <button data-tooltip="Move Next" type="button" class="icon" @click="moveNext(index)">keyboard_arrow_down</button>
               <div class="spacer"></div>
             </div>
           </div>
@@ -234,10 +234,8 @@
 
 <style scoped>
   .row {
-    display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 16px;
   }
 
   #reviews {
@@ -370,6 +368,7 @@
       width: 32px;
       height: 32px;
       cursor: pointer;
+      border-radius: 0;
 
       &:nth-child(2) {
         font-size: 24px;

@@ -76,11 +76,6 @@
     display: none;
   }
 
-  .row {
-    display: flex;
-    gap: 24px;
-  }
-
   .image {
     height: auto;
     object-fit: cover;
@@ -88,7 +83,7 @@
   }
 
   @media (max-width: 768px) {
-    .gallery, .row {
+    .gallery {
       gap: 16px;
     }
   }

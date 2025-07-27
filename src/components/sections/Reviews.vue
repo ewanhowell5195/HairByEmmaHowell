@@ -44,7 +44,7 @@
       <div class="splide__track">
         <ul class="splide__list">
           <li v-for="(review, index) in reviews" :key="index" class="splide__slide">
-            <div v-if="!service" class="review-service">{{ review.service.replace("bridalhair", "bridal hair") }}</div>
+            <div v-if="!service" class="review-service">{{ review.service }}</div>
             <h2>{{ review.heading }}</h2>
             <p class="review-content">{{ review.review }}</p>
             <div class="review-user">
@@ -62,7 +62,7 @@
         </ul>
       </div>
     </div>
-    <div v-else-if="service">There are currently no reviews for the {{ service.replace("bridalhair", "bridal hair") }} service, but you can be the first!</div>
+    <div v-else-if="service">There are currently no reviews for the {{ service }} service, but you can be the first!</div>
     <div v-else>There are currently no reviews, but you can be the first!</div>
     <a class="button mobile" :href="'https://search.google.com/local/reviews?placeid=' + $settings.placeId" target="_blank"><i class="icon">edit</i> Write a review</a>
   </section>

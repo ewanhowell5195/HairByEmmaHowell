@@ -24,10 +24,7 @@ routes[404] = {
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: Object.values(routes),
-  scrollBehavior() {
-    return { top: 0 }
-  }
+  routes: Object.values(routes)
 })
 
 router.beforeEach(async (to, from, next) => {

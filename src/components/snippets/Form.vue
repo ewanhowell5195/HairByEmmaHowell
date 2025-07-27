@@ -105,6 +105,25 @@
       margin-bottom: -8px;
       font-weight: 700;
       font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      & span {
+        font-size: 12px;
+        opacity: .5;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 12px;
+          background-color: #0008;
+        }
+      }
     }
   }
 
