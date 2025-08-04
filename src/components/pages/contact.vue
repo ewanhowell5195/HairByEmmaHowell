@@ -7,7 +7,7 @@
 
 <script setup>
   import { onMounted, ref } from "vue"
-  import CustomForm from "../snippets/Form.vue"
+  import CustomForm from "@c/snippets/Form.vue"
 
   const redirect = ref(null)
 

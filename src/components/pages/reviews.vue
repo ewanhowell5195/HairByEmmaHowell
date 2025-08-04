@@ -1,5 +1,5 @@
 <script setup>
-  import Reviews from "../sections/Reviews.vue"
+  import Reviews from "@c/sections/Reviews.vue"
 </script>
 
 <script>

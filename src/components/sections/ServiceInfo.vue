@@ -1,5 +1,5 @@
 <script setup>
-  import PriceList from "../sections/PriceList.vue"
+  import PriceList from "@c/sections/PriceList.vue"
   import "@splidejs/splide/dist/css/splide.min.css"
   import Splide from "@splidejs/splide"
   import { onMounted, ref } from "vue"

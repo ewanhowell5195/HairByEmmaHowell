@@ -1,10 +1,10 @@
 <script setup>
   import hairdressing from "@/assets/json/services/hairdressing.json"
   import bridalHair from "@/assets/json/services/bridal_hair.json"
-  import ContentWithImage from "../sections/ContentWithImage.vue"
-  import AboutSection from "../sections/About.vue"
-  import Reviews from "../sections/Reviews.vue"
-  import Banner from "../sections/Banner.vue"
+  import ContentWithImage from "@c/sections/ContentWithImage.vue"
+  import AboutSection from "@c/sections/About.vue"
+  import Reviews from "@c/sections/Reviews.vue"
+  import Banner from "@c/sections/Banner.vue"
 
   function scrollToServices() {
     document.getElementById("services").scrollIntoView({ behavior: "smooth" })

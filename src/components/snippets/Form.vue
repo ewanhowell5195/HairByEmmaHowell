@@ -98,6 +98,10 @@
       padding: 16px;
       background-color: var(--color-background-primary);
       margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        padding: 12px;
+      }
     }
 
     & label,

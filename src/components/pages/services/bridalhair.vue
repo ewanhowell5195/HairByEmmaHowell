@@ -1,9 +1,9 @@
 <script setup>
   import service from "@/assets/json/services/bridal_hair.json"
-  import ServiceInfo from "../../sections/ServiceInfo.vue"
-  import CustomForm from "../../snippets/Form.vue"
-  import Reviews from "../../sections/Reviews.vue"
-  import Gallery from "../../sections/Gallery.vue"
+  import ServiceInfo from "@c/sections/ServiceInfo.vue"
+  import CustomForm from "@c/snippets/Form.vue"
+  import Reviews from "@c/sections/Reviews.vue"
+  import Gallery from "@c/sections/Gallery.vue"
 
   service.heading = "Bridal Hair"
   service.id = "bridal_hair"

@@ -1,9 +1,9 @@
 <script setup>
   import service from "@/assets/json/services/hairdressing.json"
-  import ServiceInfo from "../../sections/ServiceInfo.vue"
-  import CustomForm from "../../snippets/Form.vue"
-  import Reviews from "../../sections/Reviews.vue"
-  import Gallery from "../../sections/Gallery.vue"
+  import ServiceInfo from "@c/sections/ServiceInfo.vue"
+  import CustomForm from "@c/snippets/Form.vue"
+  import Reviews from "@c/sections/Reviews.vue"
+  import Gallery from "@c/sections/Gallery.vue"
 
   service.heading = "Hairdressing"
   service.id = "hairdressing"
@@ -25,20 +25,7 @@
       </div>
     </section>
     <Reviews service="hairdressing" />
-    <Gallery :images="[
-      '/assets/images/services/hairdressing/blonde.jpg',
-      '/assets/images/services/hairdressing/brown.jpg',
-      '/assets/images/services/hairdressing/outside.webp',
-      '/assets/images/services/hairdressing/red.jpg',
-      '/assets/images/services/hairdressing/blonde.jpg',
-      '/assets/images/services/hairdressing/brown.jpg',
-      '/assets/images/services/hairdressing/outside.webp',
-      '/assets/images/services/hairdressing/red.jpg',
-      '/assets/images/services/hairdressing/blonde.jpg',
-      '/assets/images/services/hairdressing/brown.jpg',
-      '/assets/images/services/hairdressing/outside.webp',
-      '/assets/images/services/hairdressing/red.jpg'
-    ]" />
+    <Gallery :images="service.gallery.map(e => `/assets/images/services/hairdressing/${e}`)" />
   </div>
 </template>
 

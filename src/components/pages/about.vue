@@ -6,8 +6,8 @@
 </script>
 
 <script setup>
-  import AboutSection from "../sections/About.vue"
-  import Location from "../sections/Location.vue"
+  import AboutSection from "@c/sections/About.vue"
+  import Location from "@c/sections/Location.vue"
 </script>
 
 <template>

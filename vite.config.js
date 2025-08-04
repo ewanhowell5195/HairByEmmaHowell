@@ -31,7 +31,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": "/src"
+      "@": "/src",
+      "@c": "/src/components"
     }
   }
 })

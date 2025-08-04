@@ -1,7 +1,7 @@
 <script setup>
-  import HamburgerButton from "../snippets/HamburgerButton.vue"
+  import HamburgerButton from "@c/snippets/HamburgerButton.vue"
   import { ref, onMounted, onUnmounted, watch } from "vue"
-  import Sidebar from "../sections/Sidebar.vue"
+  import Sidebar from "@c/sections/Sidebar.vue"
 
   const isScrolled = ref(false)
   const sidebarOpen = ref(false)
