@@ -8,10 +8,10 @@
   <section>
     <h2>Price List</h2>
     <div id="price-list">
-      <div v-for="(items, category) in pricelist" class="price-list-category">
-        <h3>{{ category }}</h3>
+      <div v-for="category in pricelist" class="price-list-category">
+        <h3>{{ category.title }}</h3>
         <div class="price-list-category-items">
-          <template v-for="item in items" :key="item.name">
+          <template v-for="item in category.values" :key="item.name">
             <div class="item-name">{{ item.name }}</div>
             <div v-if="item.price" class="item-price">{{ item.price }}</div>
             <div v-if="item.description" class="item-description" :colspan="2">{{ item.description }}</div>
