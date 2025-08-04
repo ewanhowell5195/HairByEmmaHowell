@@ -58,5 +58,11 @@
         "name": "Skin test is required at least 48 hours prior to any colour appointment."
       }
     ]
-  }
+  },
+  "gallery": [
+    "outside.webp",
+    "red.jpg",
+    "blonde.jpg",
+    "brown.jpg"
+  ]
 }
