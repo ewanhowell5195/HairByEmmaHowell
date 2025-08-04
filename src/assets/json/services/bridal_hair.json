@@ -12,23 +12,28 @@
       "values": [
         {
           "name": "Brides hair on the day",
-          "price": "£120"
+          "price": "£120",
+          "description": ""
         },
         {
           "name": "Bridesmaid",
-          "price": "£80"
+          "price": "£80",
+          "description": ""
         },
         {
           "name": "Mother of the Bride",
-          "price": "£80"
+          "price": "£80",
+          "description": ""
         },
         {
           "name": "Flower Girl",
-          "price": "£35"
+          "price": "£35",
+          "description": ""
         },
         {
           "name": "Additional Bridal Party",
-          "price": "£80"
+          "price": "£80",
+          "description": ""
         }
       ]
     },

@@ -12,47 +12,58 @@
       "values": [
         {
           "name": "Wash, cut and blow dry",
-          "price": "£40"
+          "price": "£40",
+          "description": ""
         },
         {
           "name": "Wash and blow dry",
-          "price": "£30"
+          "price": "£30",
+          "description": ""
         },
         {
           "name": "Full head of highlights/Balayage",
-          "price": "£95"
+          "price": "£95",
+          "description": ""
         },
         {
           "name": "Half head of highlights/Balayage",
-          "price": "£70"
+          "price": "£70",
+          "description": ""
         },
         {
           "name": "Partial highlights",
-          "price": "£50"
+          "price": "£50",
+          "description": ""
         },
         {
           "name": "Root tint",
-          "price": "£40"
+          "price": "£40",
+          "description": ""
         },
         {
           "name": "Root tint and refresh",
-          "price": "£50"
+          "price": "£50",
+          "description": ""
         },
         {
           "name": "Semi-permanent colour",
-          "price": "£50"
+          "price": "£50",
+          "description": ""
         },
         {
           "name": "Toner",
-          "price": "£20"
+          "price": "£20",
+          "description": ""
         },
         {
           "name": "Men’s cut",
-          "price": "£25"
+          "price": "£25",
+          "description": ""
         },
         {
           "name": "Olaplex treatment",
-          "price": "£20"
+          "price": "£20",
+          "description": ""
         }
       ]
     },
@@ -60,15 +71,7 @@
       "title": "Extra Information",
       "values": [
         {
-          "name": "Skin test is required at least 48 hours prior to any colour appointment."
-        }
-      ]
-    },
-    {
-      "title": "New Section",
-      "values": [
-        {
-          "name": "Name",
+          "name": "Skin test is required at least 48 hours prior to any colour appointment.",
           "price": "",
           "description": ""
         }
