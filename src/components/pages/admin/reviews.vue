@@ -7,7 +7,7 @@
   let imageSet
 
   async function load(data) {
-    imageSet = new Set(reviews.flatMap(r => r.images))
+    imageSet = new Set(data.flatMap(r => r.images))
   }
 
   async function save(data) {
