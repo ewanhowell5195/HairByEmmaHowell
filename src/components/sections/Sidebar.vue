@@ -1,12 +1,33 @@
 <script setup>
-  defineProps({
+  import { useRouter } from "vue-router"
+  import { ref, watch } from "vue"
+
+  const props = defineProps({
     modelValue: Boolean
   })
 
   const emit = defineEmits(["update:modelValue"])
+  const router = useRouter()
+
+  const hasToken = ref(!!localStorage.getItem("gh_token"))
+
+  watch(
+    () => props.modelValue,
+    open => {
+      if (open) hasToken.value = !!localStorage.getItem("gh_token")
+    }
+  )
 
   function closeSidebar() {
     emit("update:modelValue", false)
+  }
+
+  function logout() {
+    localStorage.removeItem("gh_token")
+    localStorage.removeItem("gh_token_expiry")
+    closeSidebar()
+    router.push("/")
+    hasToken.value = false
   }
 </script>
 
@@ -20,6 +41,7 @@
     <router-link to="/contact" @click="closeSidebar">Contact</router-link>
     <div class="spacer"></div>
     <router-link to="/admin" @click="closeSidebar">Admin</router-link>
+    <a v-if="hasToken" @click="logout">Logout</a>
   </div>
   <div id="sidebar-content-overlay" :class="{ visible: modelValue }" @click="closeSidebar"></div>
 </template>
@@ -66,6 +88,7 @@
     font-size: 24px;
     text-decoration: none;
     position: relative;
+    cursor: pointer;
 
     &::before {
       content: "";
