@@ -54,7 +54,7 @@ router.beforeEach(async (to, from, next) => {
   }
 
   if (isAdminRoute && !tokenInStorage && !to.path.match(/^\/admin\/denied\/?$/)) {
-    location = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}&scope=repo`
+    location = `https://github.com/login/oauth/authorize?client_id=Ov23liiD3sMKxZYdRJRW&redirect_uri=${encodeURIComponent("https://hairbyemmahowell.co.uk/api/auth/callback")}&scope=public_repo`
     return
   }
 
