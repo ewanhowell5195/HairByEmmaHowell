@@ -87,6 +87,8 @@
 
     & img {
       max-width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
     }
   }
 

@@ -29,20 +29,7 @@
       </div>
     </section>
     <Reviews service="bridal_hair" />
-    <Gallery :images="[
-      '/assets/images/services/bridal_hair/blonde.webp',
-      '/assets/images/services/bridal_hair/brown.jpg',
-      '/assets/images/services/bridal_hair/flowers.jpg',
-      '/assets/images/services/bridal_hair/pearls.jpg',
-      '/assets/images/services/bridal_hair/blonde.webp',
-      '/assets/images/services/bridal_hair/brown.jpg',
-      '/assets/images/services/bridal_hair/flowers.jpg',
-      '/assets/images/services/bridal_hair/pearls.jpg',
-      '/assets/images/services/bridal_hair/blonde.webp',
-      '/assets/images/services/bridal_hair/brown.jpg',
-      '/assets/images/services/bridal_hair/flowers.jpg',
-      '/assets/images/services/bridal_hair/pearls.jpg'
-    ]" />
+    <Gallery :images="service.gallery.map(e => `/assets/images/services/bridal_hair/${e}`)" />
   </div>
 </template>
 

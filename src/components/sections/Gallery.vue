@@ -80,6 +80,7 @@
     height: auto;
     object-fit: cover;
     display: block;
+    aspect-ratio: 1;
   }
 
   @media (max-width: 768px) {

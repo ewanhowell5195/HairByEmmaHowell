@@ -334,11 +334,13 @@ blockquote {
 .splide__pagination {
   gap: 4px;
   bottom: 16px !important;
+  right: 16px !important;
   left: initial !important;
+  padding: 0 !important;
 }
 
 .splide__pagination__page {
-  background-color: #000 !important;
+  background-color: #fff8 !important;
   opacity: 1 !important;
   transform: initial !important;
   width: 24px !important;
@@ -347,9 +349,10 @@ blockquote {
   position: relative;
   display: block !important;
   border-radius: 0 !important;
+  border: 2px solid #000 !important;
+  backdrop-filter: blur(4px);
 }
 
-.splide__pagination__page::before,
 .splide__pagination__page.is-active::after {
   content: "";
   position: absolute;
@@ -358,7 +361,7 @@ blockquote {
 }
 
 .splide__pagination__page.is-active::after {
-  inset: 4px;
+  inset: 2px;
   background-color: #000;
 }
 
@@ -368,5 +371,27 @@ blockquote {
 
   &[disabled] {
     opacity: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .splide.is-overflow.pagination-below {
+    padding-bottom: 32px;
+  }
+
+  .splide__pagination__page {
+    width: 16px !important;
+    height: 16px !important;
+    border: 1px solid #000 !important;
+  }
+
+  .splide__pagination__page.is-active::after {
+    inset: 2px;
+    background-color: #000;
+  }
+
+  .splide__pagination {
+    bottom: 4px !important;
+    right: 4px !important;
   }
 }

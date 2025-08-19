@@ -44,7 +44,7 @@
       <div class="splide__track">
         <ul class="splide__list">
           <li v-for="(review, index) in reviews" :key="index" class="splide__slide">
-            <div v-if="!service" class="review-service">{{ review.service }}</div>
+            <div v-if="!service" class="review-service">{{ review.service.replaceAll("_", " ") }}</div>
             <h2>{{ review.heading }}</h2>
             <p class="review-content">{{ review.review }}</p>
             <div class="review-user">
@@ -55,7 +55,7 @@
                 <div>{{ formatDate(review.date) }}</div>
               </div>
             </div>
-            <div :class="['review-images', `review-images-${review.images?.length || 0}`, `review-image-rows-${reviews.some(r => r.images?.length === 3) ? 2 : 1}`]">
+            <div v-if="review.images.length" :class="['review-images', `review-images-${review.images.length}`, `review-image-rows-${reviews.some(r => r.images?.length === 3) ? 2 : 1}`]">
               <img v-for="(img, i) in review.images" :key="i" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + img" alt="Review Image">
             </div>
           </li>
@@ -78,7 +78,7 @@
   .splide__slide {
     width: calc(100% / 3 - 24px * 2 / 3);
     background-color: var(--color-background-primary);
-    padding: 16px 24px 24px;
+    padding: 24px;
     display: flex;
     gap: 16px;
     flex-direction: column;
@@ -99,6 +99,10 @@
 
   h2 {
     margin-bottom: -8px;
+
+    &:first-child {
+      margin-top: -4px;
+    }
   }
 
   .review-user {
@@ -169,8 +173,13 @@
   }
 
   @media (max-width: 768px) {
+    h2:first-child {
+      margin-top: -2px;
+    }
+
     .splide__slide {
       width: 100%;
+      padding: 16px;
     }
 
     .avatar, .avatar-fallback {

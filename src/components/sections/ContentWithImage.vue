@@ -117,27 +117,18 @@
 
   .section-image {
     position: relative;
-    min-height: 320px;
+    display: flex;
+    justify-content: center;
 
-    > img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    > * {
+      max-width: min(100%, 500px);
+      aspect-ratio: 4 / 3;
     }
 
-    > .splide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
+    & img {
       height: 100%;
-
-      & img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -185,13 +176,6 @@
       h2 {
         display: none;
       }
-    }
-  }
-
-  @media (max-width: 512px) {
-    .section-image {
-      position: relative;
-      min-height: 256px;
     }
   }
 </style>
