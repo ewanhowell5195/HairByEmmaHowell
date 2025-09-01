@@ -136,7 +136,7 @@ async function buildSitemap() {
 
     if (rel.startsWith("admin/")) continue
     if (rel === "404/index.html") continue
-    if (rel === "index.html") continue // root already added
+    if (rel === "index.html") continue
 
     let url = "/" + rel.replace(/index\.html$/, "")
     urls.push("https://hairbyemmahowell.co.uk" + url)
