@@ -1,4 +1,11 @@
 {
   "placeId": "ChIJq2s3JgB3dkgRrXynpIf2-fo",
-  "formKey": "fe16a119-6dff-4525-84ac-e74db301d63b"
+  "formKey": "fe16a119-6dff-4525-84ac-e74db301d63b",
+  "colors": {
+    "primary": "#d7d7d7",
+    "background": "#fff",
+    "background-primary": "#ebebeb",
+    "button-dark": "#000",
+    "button-light": "#fff"
+  }
 }

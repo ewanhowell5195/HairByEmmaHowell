@@ -2,10 +2,19 @@
   import Header from "./components/sections/Header.vue"
   import Footer from "./components/sections/Footer.vue"
   import PopupViewer from "./components/sections/PopupViewer.vue"
+  import { onMounted } from "vue"
+  import settings from "./settings.json"
 
   function scrollToTop() {
     window.scrollTo(0, 0)
   }
+
+  onMounted(() => {
+    const root = document.documentElement
+    Object.entries(settings.colors).forEach(([key, value]) => {
+      root.style.setProperty(`--color-${key}`, value)
+    })
+  })
 </script>
 
 <template>
@@ -32,10 +41,11 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+  }
 
-    > .container:first-child {
-      margin-top: 20px;
-    }
+  #page > .container:first-child,
+  .page > .container:first-child {
+    margin-top: 20px;
   }
 
   .page-transition-enter-active,

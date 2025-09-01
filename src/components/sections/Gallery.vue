@@ -42,6 +42,7 @@
           class="image"
           :style="group.style"
           :popupable="componentId"
+          loading="lazy"
         />
       </div>
     </div>
@@ -55,6 +56,7 @@
           class="image"
           :style="group.style"
           :popupable="componentId"
+          loading="lazy"
         />
       </div>
     </div>

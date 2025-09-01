@@ -13,7 +13,7 @@
 
 <template>
   <section class="container">
-    <img :src="'/assets/images/about/' + about.image" popupable width="256" height="256" />
+    <img :src="'/assets/images/about/' + about.image" popupable width="256" height="256" loading="lazy" />
     <div class="content">
       <div v-html="about.intro"></div>
       <router-link v-if="link" to="/about" class="button">Learn More</router-link>
@@ -38,6 +38,7 @@
   img {
     display: block;
     max-width: 256px;
+    min-width: 256px;
     height: 256px;
     border-radius: 50%;
     box-shadow: 0 5px 10px #0004;
@@ -79,6 +80,7 @@
     img {
       display: block;
       max-width: 200px;
+      min-width: 200px;
       height: 200px;
     }
 

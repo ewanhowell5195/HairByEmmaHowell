@@ -38,7 +38,7 @@
         <div class="splide__track">
           <ul class="splide__list">
             <li v-for="image of service.images" class="splide__slide">
-              <img :src="`/assets/images/services/${service.id}/${image}`" :popupable="componentId" />
+              <img :src="`/assets/images/services/${service.id}/${image}`" :popupable="componentId" loading="lazy" />
             </li>
           </ul>
         </div>
@@ -47,7 +47,7 @@
         <div class="splide__track">
           <ul class="splide__list">
             <li v-for="image of service.images" class="splide__slide">
-              <img :src="`/assets/images/services/${service.id}/${image}`" height="96" />
+              <img :src="`/assets/images/services/${service.id}/${image}`" height="96" loading="lazy" />
             </li>
           </ul>
         </div>

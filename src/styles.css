@@ -1,8 +1,5 @@
 :root {
   color-scheme: light;
-  --color-primary: #d7d7d7;
-  --color-background: #fff;
-  --color-background-primary: #ebebeb;
   --content-width: 1280px;
   --box-shadow: 0 2px 6px 2px #0004;
   --box-shadow-active: 0 0 6px 2px #0004;
@@ -146,7 +143,7 @@ hr {
 
 button, .button {
   all: unset;
-  background-color: #000;
+  background-color: var(--color-button-dark);
   color: #fff !important;
   display: flex;
   font-size: 20px;
@@ -182,7 +179,7 @@ button, .button {
   }
 
   &.white {
-    background-color: #fff;
+    background-color: var(--color-button-light);
     color: #000 !important;
 
     * {

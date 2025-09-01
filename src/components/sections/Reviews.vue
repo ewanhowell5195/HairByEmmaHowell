@@ -48,7 +48,7 @@
             <h2>{{ review.heading }}</h2>
             <p class="review-content">{{ review.review }}</p>
             <div class="review-user">
-              <img v-if="review.image1" :src="'/assets/images/reviews/' + review.image1" alt="Avatar" class="avatar" with="56" height="56">
+              <img v-if="review.image1" :src="'/assets/images/reviews/' + review.image1" alt="Avatar" class="avatar" with="56" height="56" loading="lazy">
               <i v-else class="avatar-fallback icon">person</i>
               <div class="review-user-details">
                 <div>{{ review.name }}</div>
@@ -56,7 +56,7 @@
               </div>
             </div>
             <div v-if="review.images.length" :class="['review-images', `review-images-${review.images.length}`, `review-image-rows-${reviews.some(r => r.images?.length === 3) ? 2 : 1}`]">
-              <img v-for="(img, i) in review.images" :key="i" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + img" alt="Review Image">
+              <img v-for="(img, i) in review.images" :key="i" :popupable="componentId + '-' + index" :src="'/assets/images/reviews/' + img" alt="Review Image" loading="lazy">
             </div>
           </li>
         </ul>
