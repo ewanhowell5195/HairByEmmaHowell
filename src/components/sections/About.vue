@@ -41,6 +41,7 @@
     height: 256px;
     border-radius: 50%;
     box-shadow: 0 5px 10px #0004;
+    object-fit: cover;
   }
 
   .content {
