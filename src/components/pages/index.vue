@@ -5,6 +5,7 @@
   import AboutSection from "@c/sections/About.vue"
   import Reviews from "@c/sections/Reviews.vue"
   import Banner from "@c/sections/Banner.vue"
+  import home from "@/assets/json/home.json"
 
   function scrollToServices() {
     document.getElementById("services").scrollIntoView({ behavior: "smooth" })
@@ -13,7 +14,7 @@
 
 <template>
   <div class="page">
-    <Banner image="/assets/images/home/banner.webp" mobileimage="/assets/images/home/banner_mobile.jpg">
+    <Banner :image="'/assets/images/home/' + home.banner" :mobileimage="'/assets/images/home/' + home.banner_mobile">
       <img class="banner-logo" src="/assets/images/logo/transparent.webp">
       <p>Hairdresser and Bridal Stylist based in Row Town, Surrey</p>
       <button @click="scrollToServices" class="white">View Services</button>
