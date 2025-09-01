@@ -7,6 +7,14 @@
       .replace(/-/g, " ")
       .replace(/\b\w/g, c => c.toUpperCase())
   }
+
+  function isDark(hex) {
+    const r = parseInt(hex.slice(1, 3), 16)
+    const g = parseInt(hex.slice(3, 5), 16)
+    const b = parseInt(hex.slice(5, 7), 16)
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+    return luminance < 0.5
+  }
 </script>
 
 <template>
@@ -18,6 +26,9 @@
             <div class="col colour">
               <label :for="key">{{ toTitleCase(key) }}</label>
               <input :id="key" type="color" v-model="data.colors[key]" />
+              <div class="icon" :class="{ light: isDark(data.colors[key]) }">
+                colorize
+              </div>
             </div>
           </template>
         </div>
@@ -36,9 +47,22 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    position: relative;
 
-    & input {
+    input {
       height: 128px;
     }
   }
-</style>>
+
+  .icon {
+    position: absolute;
+    bottom: calc(12px + 8px);
+    left: calc(16px + 8px);
+    font-size: 24px;
+    color: black;
+
+    &.light {
+      color: #fff;
+    }
+  }
+</style>
