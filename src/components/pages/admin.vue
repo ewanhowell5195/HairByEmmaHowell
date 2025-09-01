@@ -4,6 +4,7 @@
     <p>Manage the site content and images.</p>
     <router-link to="/admin/colours" class="button">Manage Colours</router-link>
     <h3>Pages</h3>
+    <router-link to="/admin/home" class="button">Manage Home</router-link>
     <router-link to="/admin/about" class="button">Manage About</router-link>
     <router-link to="/admin/reviews" class="button">Manage Reviews</router-link>
     <h3>Services</h3>

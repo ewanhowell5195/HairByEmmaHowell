@@ -1,17 +1,61 @@
 import { hashDataUrl, getExtension, prepareImageChanges } from "@/js/github.js"
 
-export async function processImage(obj, key, original, dir) {
+async function resizeDataUrl(dataUrl, maxSize = 1024) {
+  return new Promise(fulfil => {
+    const img = new Image()
+    img.onload = () => {
+      let { width, height } = img
+
+      if (width > maxSize || height > maxSize) {
+        const scale = Math.min(maxSize / width, maxSize / height)
+        width = Math.round(width * scale)
+        height = Math.round(height * scale)
+      }
+
+      const canvas = document.createElement("canvas")
+      canvas.width = width
+      canvas.height = height
+      const ctx = canvas.getContext("2d")
+      ctx.drawImage(img, 0, 0, width, height)
+
+      fulfil(canvas.toDataURL("image/webp", 0.95))
+    }
+    img.src = dataUrl
+  })
+}
+
+export async function processImage(obj, key, dir) {
   const newImages = new Map()
 
-  if (obj[key] && obj[key] !== original && obj[key].startsWith("data:")) {
-    const hash = await hashDataUrl(obj[key])
-    const ext = getExtension(obj[key])
+  if (obj[key].startsWith("data:")) {
+    const resized = await resizeDataUrl(obj[key], 1024)
+
+    const hash = await hashDataUrl(resized)
+    const ext = getExtension(resized)
     const name = `${hash}${ext}`
-    newImages.set(obj[key], name)
+
+    newImages.set(resized, name)
     obj[key] = name
   }
 
   return prepareImageChanges(dir, newImages, [obj[key]])
+}
+
+export async function processImages(obj, keys, dir) {
+  const newImages = new Map()
+
+  for (const key of keys) {
+    if (obj[key].startsWith("data:")) {
+      const resized = await resizeDataUrl(obj[key], 1024)
+      const hash = await hashDataUrl(resized)
+      const ext = getExtension(resized)
+      const name = `${hash}${ext}`
+      newImages.set(resized, name)
+      obj[key] = name
+    }
+  }
+
+  return prepareImageChanges(dir, newImages, keys.map(k => obj[k]))
 }
 
 export async function processImageLists(imageLists, imageSet, imageDir) {
@@ -21,16 +65,18 @@ export async function processImageLists(imageLists, imageSet, imageDir) {
     for (let i = 0; i < list.length; i++) {
       const img = list[i]
       if (img?.startsWith("data:")) {
-        if (!newImages.has(img)) {
-          const hash = await hashDataUrl(img)
-          const ext = getExtension(img)
-          newImages.set(img, `${hash}${ext}`)
+        const resized = await resizeDataUrl(img, 1024)
+
+        if (!newImages.has(resized)) {
+          const hash = await hashDataUrl(resized)
+          const ext = getExtension(resized)
+          newImages.set(resized, `${hash}${ext}`)
         }
-        list[i] = newImages.get(img)
+
+        list[i] = newImages.get(resized)
       }
     }
   }
-
 
   const finalNames = imageLists.flat().filter(Boolean)
   const newSet = new Set(finalNames)
