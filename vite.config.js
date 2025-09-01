@@ -16,16 +16,15 @@ const getFiles = async function*(dir) {
 }
 
 export default defineConfig({
-  server: {
-    allowedHosts: ["0d1a-82-2-66-121.ngrok-free.app"]
-  },
   plugins: [
     vue(),
     {
       name: "build-finished-hook",
       async closeBundle() {
         console.log("Build finished. Running custom post-build function...")
-        return buildOpenGraph()
+        await buildOpenGraph()
+        await buildSitemap()
+        buildRobots()
       }
     }
   ],
@@ -123,4 +122,41 @@ ${files}
   }
 
   console.log("Built open graph data")
+}
+
+async function buildSitemap() {
+  console.log("Building sitemap…")
+
+  const urls = ["https://hairbyemmahowell.co.uk/"]
+
+  for await (const file of getFiles("dist")) {
+    if (!file.endsWith("index.html")) continue
+
+    const rel = path.relative("dist", file).replace(/\\/g, "/")
+
+    if (rel.startsWith("admin/")) continue
+    if (rel === "404/index.html") continue
+    if (rel === "index.html") continue // root already added
+
+    let url = "/" + rel.replace(/index\.html$/, "")
+    urls.push("https://hairbyemmahowell.co.uk" + url)
+  }
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(u => `<url><loc>${u}</loc></url>`).join("")}</urlset>`
+
+  fs.writeFileSync("dist/sitemap.xml", sitemap)
+  console.log("Built sitemap.xml with", urls.length, "urls")
+}
+
+function buildRobots() {
+  console.log("Building robots.txt…")
+
+  const robots = `User-agent: *
+Disallow: /admin/
+Allow: /
+
+Sitemap: https://hairbyemmahowell.co.uk/sitemap.xml`
+
+  fs.writeFileSync("dist/robots.txt", robots)
+  console.log("Built robots.txt")
 }
