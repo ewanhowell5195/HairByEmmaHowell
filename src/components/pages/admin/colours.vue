@@ -69,6 +69,7 @@
     left: calc(16px + 8px);
     font-size: 24px;
     color: black;
+    pointer-events: none;
 
     &.light {
       color: #fff;
