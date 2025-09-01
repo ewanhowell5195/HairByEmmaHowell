@@ -25,9 +25,9 @@
           <template v-for="(value, key) in data.colors" :key="key">
             <div class="col colour">
               <label :for="key">{{ toTitleCase(key) }}</label>
-              <input :id="key" type="color" v-model="data.colors[key]" />
-              <div class="icon" :class="{ light: isDark(data.colors[key]) }">
-                colorize
+              <div class="picker">
+                <input :id="key" type="color" v-model="data.colors[key]" />
+                <div class="icon" :class="{ light: isDark(data.colors[key]) }">colorize</div>
               </div>
             </div>
           </template>
@@ -41,22 +41,31 @@
   .colours {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+    }
   }
 
   .colour {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    justify-content: space-between;
+  }
+
+  .picker {
     position: relative;
 
     input {
+      width: 100%;
       height: 128px;
     }
   }
 
   .icon {
     position: absolute;
-    bottom: calc(12px + 8px);
+    top: calc(12px + 8px);
     left: calc(16px + 8px);
     font-size: 24px;
     color: black;
