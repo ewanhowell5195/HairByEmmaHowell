@@ -68,7 +68,7 @@
     left: 0;
     top: var(--header-height);
     bottom: 0;
-    background-color: #fff;
+    background-color: var(--color-background);
     width: 256px;
     z-index: 51;
     transform: translateX(-100%);

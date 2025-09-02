@@ -79,7 +79,7 @@
       border-radius: 0;
       padding: 0;
       color: #000 !important;
-      background-color: #fff;
+      background-color: var(--color-background);
 
       &:nth-child(2) {
         font-size: 24px;

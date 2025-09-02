@@ -174,7 +174,7 @@
   .new-image {
     position: absolute;
     inset: 0;
-    background-color: #fff;
+    background-color: var(--color-background);
     border-radius: 0;
     pointer-events: none;
     font-size: 64px;

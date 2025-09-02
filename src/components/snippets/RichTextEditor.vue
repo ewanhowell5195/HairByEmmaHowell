@@ -78,7 +78,7 @@
   .editor {
     outline: 2px solid transparent;
     transition: outline .15s ease;
-    background-color: #fff;
+    background-color: var(--color-background);
 
     &:focus-within {
       outline: 2px solid var(--color-primary);
