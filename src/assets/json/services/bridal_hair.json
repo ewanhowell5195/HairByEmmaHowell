@@ -30,16 +30,6 @@
           "description": ""
         },
         {
-          "name": "Mother of the Bride",
-          "price": "£80",
-          "description": ""
-        },
-        {
-          "name": "Flower Girl",
-          "price": "£35",
-          "description": ""
-        },
-        {
           "name": "Additional Bridal Party",
           "price": "£80",
           "description": ""
@@ -50,34 +40,29 @@
       "title": "Trial Services",
       "values": [
         {
-          "name": "BRIDES TRIAL",
+          "name": "Bridal Trial",
           "price": "£80",
-          "description": "2 hr appt at home salon or mobile if travel is covered"
+          "description": "2 hour appointment based in my home salon or a mobile appointment is available when travel is covered. "
         },
         {
-          "name": "BRIDAL PARTY TRIAL",
-          "price": "£50",
-          "description": "1.5 hr appt at home salon or mobile if done with bride’s trial"
+          "name": "Bridal Party Trial",
+          "price": "£60",
+          "description": "1.5 hour appointment based in my home salon or a mobile appointment is available if done with brides trial."
         }
       ]
     },
     {
-      "title": "Bridal Packages",
+      "title": "Additional Services",
       "values": [
         {
-          "name": "EMERALD PACKAGE",
-          "price": "£350",
-          "description": "1 Bride trial, Bride on day, 2 adult bridal party members"
+          "name": "Additional stylist",
+          "price": "£75",
+          "description": "Bridal parties with six or more members may require an additional stylist to assist, depending on location and timings. "
         },
         {
-          "name": "RUBY PACKAGE",
-          "price": "£430",
-          "description": "1 Bride trial, Bride on day, 3 adult bridal party members"
-        },
-        {
-          "name": "DIAMOND PACKAGE",
-          "price": "£510",
-          "description": "1 Bride trial, Bride on day, 4 adult bridal party members"
+          "name": "Second Look",
+          "price": "£150",
+          "description": "Enjoy a discreet, 'by-your-side' service through to your wedding breakfast, with my support for any touch-ups, adjustments after the ceremony, assistance during photos, and a second look before you make your entrance."
         }
       ]
     }
