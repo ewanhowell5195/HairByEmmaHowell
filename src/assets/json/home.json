@@ -1,4 +1,14 @@
 {
   "banner": "04fd445f501fa8a765107ea5e66da1a7.png",
-  "banner_mobile": "e37cb9f53c5502444689932570ad3e85.webp"
+  "banner_mobile": "e37cb9f53c5502444689932570ad3e85.webp",
+  "gallery_carousel": [
+    "0efd8bd041fdb6b624098572c4f2f625.jpg",
+    "3b11cfaa67372ef23dc61a56363f4cb1.jpg",
+    "3f7d65a88a81a709d41b9c5853fec580.jpg",
+    "4f0e17fd2f59c9f8c18200158e3e5357.jpg",
+    "5ad6fee19671e8f18418a1c563adea60.jpg",
+    "5d8fdafd04951a610163d9650747e5a3.jpg",
+    "5e92920a2588888c9848927c147bf006.jpg",
+    "5ec534e27fef0de3068c2e79cb5d5d8e.jpg"
+  ]
 }
