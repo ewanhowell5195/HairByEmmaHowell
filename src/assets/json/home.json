@@ -10,5 +10,7 @@
     "5d8fdafd04951a610163d9650747e5a3.jpg",
     "5e92920a2588888c9848927c147bf006.jpg",
     "5ec534e27fef0de3068c2e79cb5d5d8e.jpg"
-  ]
+  ],
+  "fixed_background_image": "ff55798f395c8c3a79f0756225a8f2ae.jpg",
+  "fixed_background_content": "Hello there!"
 }
