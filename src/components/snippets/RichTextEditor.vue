@@ -77,7 +77,7 @@
 <style scoped>
   .editor {
     outline: 2px solid transparent;
-    transition: outline .15s ease;
+    transition: outline .15s;
     background-color: var(--color-background);
 
     &:focus-within {

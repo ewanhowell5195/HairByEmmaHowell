@@ -9,13 +9,11 @@
   let imageSet
 
   function load(data) {
-    imageSet = new Set([data.images, data.gallery].flat())
+    imageSet = new Set(data.images.concat(data.gallery))
   }
 
   async function save(data) {
-    const imageLists = [data.images, data.gallery]
-    const tree = await processImageLists(imageLists, imageSet, "public/assets/images/services/bridal_hair")
-    return tree
+    return await processImageLists([data.images, data.gallery], imageSet, "public/assets/images/services/bridal_hair")
   }
 </script>
 

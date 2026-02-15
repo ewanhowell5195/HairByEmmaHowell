@@ -11,11 +11,6 @@
 
   const redirect = ref(null)
 
-  const updateRedirect = e => {
-    const name = e.currentTarget.value.trim().split(" ")[0]
-    redirect.value = `${window.location.origin}/submitted?name=${encodeURIComponent(name)}`
-  }
-
   onMounted(() => {
     redirect.value = `${window.location.origin}/submitted`
   })

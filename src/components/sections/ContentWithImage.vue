@@ -1,5 +1,6 @@
 <script setup>
   import "@splidejs/splide/dist/css/splide.min.css"
+  import Image from "@c/snippets/Image.vue"
   import Splide from "@splidejs/splide"
   import { onMounted, ref } from "vue"
 
@@ -40,8 +41,10 @@
         arrows: false,
         autoplay: true,
         interval: props.interval,
-        type: "loop",
-        pauseOnHover: false
+        rewind: true,
+        pauseOnHover: false,
+        flickPower: 75,
+        flickMaxPages: 0.3
       }).mount()
 
       instance.Components.Autoplay.pause()
@@ -74,25 +77,27 @@
 </script>
 
 <template>
-  <section class="content-with-image">
+  <section>
     <div class="container" :class="{ reverse: content === 'left' }">
       <h2 v-if="heading">{{ heading }}</h2>
       <div class="section-image">
-        <img v-if="typeof image === 'string'" :src="image" popupable loading="lazy" />
-        <img v-else-if="image.length === 1" :src="image[0]" popupable loading="lazy" />
+        <Image v-if="typeof image === 'string'" :src="image" popupable loading="lazy" />
+        <Image v-else-if="image.length === 1" :src="image[0]" popupable loading="lazy" />
         <div ref="splide" class="splide">
           <div class="splide__track">
             <ul class="splide__list">
               <li v-for="img of image" class="splide__slide">
-                <img :src="img" :popupable="componentId" loading="lazy" />
+                <Image :src="img" :popupable="componentId" loading="lazy" />
               </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="content">
-        <h2 v-if="heading">{{ heading }}</h2>
-        <slot></slot>
+        <h2 v-if="heading" class="fade-in" :class="content === 'left' ? 'fade-in-right': 'fade-in-left'">{{ heading }}</h2>
+        <div class="fade-in" :class="content === 'left' ? 'fade-in-right': 'fade-in-left'">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </section>
@@ -141,10 +146,14 @@
   }
 
   .content {
+    padding: 20px;
+  }
+
+  .content,
+  .content > div {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 20px;
   }
 
   :deep(h2) {
@@ -154,6 +163,25 @@
   :deep(.button) {
     width: 256px;
     align-self: center;
+  }
+
+  :deep(.splide__pagination__page) {
+    width: 6px !important;
+    height: 6px !important;
+    border: none !important;
+    background: #fff !important;
+    border-radius: 3px !important;
+    transition: width .25s, opacity .25s;
+    opacity: 0.75 !important;
+
+    &::after {
+      display: none;
+    }
+
+    &.is-active {
+      width: 16px !important;
+      opacity: 1 !important;
+    }
   }
 
   @media (max-width: 768px) {

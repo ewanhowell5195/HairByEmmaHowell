@@ -54,7 +54,7 @@
     z-index: 49;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .25s ease;
+    transition: opacity .25s;
     backdrop-filter: blur(4px);
 
     &.visible {
@@ -72,7 +72,7 @@
     width: 256px;
     z-index: 51;
     transform: translateX(-100%);
-    transition: transform .25s ease;
+    transition: transform .25s;
     display: flex;
     flex-direction: column;
     padding: 0 32px 32px;
@@ -99,7 +99,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 0;
-      transition: width .15s ease;
+      transition: width .15s;
     }
 
     &:hover::before {

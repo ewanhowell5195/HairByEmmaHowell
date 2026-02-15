@@ -60,14 +60,15 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    transition: box-shadow .25s ease;
+    transition: box-shadow .25s;
   }
 
   .header {
-    margin: 24px auto;
     flex-direction: row;
     align-items: center;
     gap: 32px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   #header-logo-link {
@@ -109,7 +110,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: 0;
-        transition: width .15s ease;
+        transition: width .15s;
       }
 
       &:hover::before {
@@ -152,7 +153,7 @@
     }
 
     #header-logo-link {
-      margin-right: calc(16px + 35px);
+      margin-right: calc(16px + 20px);
       gap: 12px;
 
       & img {

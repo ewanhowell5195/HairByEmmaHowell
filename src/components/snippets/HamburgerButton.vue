@@ -31,13 +31,13 @@
 
       &:before {
         top: 0;
-        transition: top 75ms ease, opacity 75ms ease 0.12s;
+        transition: top 75ms, opacity 75ms 0.12s;
         opacity: 0;
       }
 
       &:after {
         bottom: 0;
-        transition: bottom 75ms ease, transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+        transition: bottom 75ms, transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
         transform: rotate(-90deg);
       }
     }
@@ -51,12 +51,12 @@
 
     &:before {
       position: absolute;
-      top: -10px;
+      top: -8px;
     }
 
     &:after {
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
     }
   }
 
@@ -65,29 +65,28 @@
   .hamburger-line:after {
     left: 0;
     content: "";
-    width: 35px;
-    height: 5px;
-    border-radius: 3px;
+    width: 28px;
+    height: 3px;
     background-color: currentColor;
-    transition: top 75ms ease 0.12s, bottom 75ms ease 0.12s, opacity 75ms ease, transform 75ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: top 75ms 0.12s, bottom 75ms 0.12s, opacity 75ms, transform 75ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
   @media (max-width: 768px) {
     .hamburger-line {
       &:before {
-        top: -8px;
+        top: -6px;
       }
 
       &:after {
-        bottom: -8px;
+        bottom: -6px;
       }
     }
 
     .hamburger-line,
     .hamburger-line:before,
     .hamburger-line:after {
-      height: 3px;
-      width: 24px;
+      height: 2px;
+      width: 20px;
     }
   }
 </style>

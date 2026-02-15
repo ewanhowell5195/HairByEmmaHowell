@@ -1,5 +1,6 @@
 <script setup>
   import about from "@/assets/json/about.json"
+  import Image from "@c/snippets/Image.vue"
 
   defineProps({
     extra: {
@@ -12,27 +13,25 @@
 </script>
 
 <template>
-  <section class="container">
-    <img :src="'/assets/images/about/' + about.image" popupable width="256" height="256" loading="lazy" />
-    <div class="content">
-      <div v-html="about.intro"></div>
-      <router-link v-if="link" to="/about" class="button">Learn More</router-link>
+  <section>
+    <div class="container">
+      <Image :src="'/assets/images/about/' + about.image" popupable width="256" height="256" />
+      <div class="content">
+        <div v-html="about.intro" class="fade-in"></div>
+        <router-link v-if="link" to="/about" class="button fade-in">Learn More</router-link>
+      </div>
     </div>
-  </section>
-  <section v-if="extra" class="container">
-    <div class="more-content" v-html="about.extra"></div>
+    <div v-if="extra" class="container">
+      <div class="more-content fade-in fade-in-left" v-html="about.extra"></div>
+    </div>
   </section>
 </template>
 
 <style scoped>
-  section {
+  .container {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    > h1 {
-      display: none;
-    }
   }
 
   img {
@@ -82,15 +81,15 @@
       max-width: 200px;
       min-width: 200px;
       height: 200px;
+      order: 1;
     }
 
     .content {
-      padding-bottom: 0;
-      padding-top: 0;
+      display: contents;
+    }
 
-      h1 {
-        display: none;
-      }
+    .button {
+      order: 2;
     }
   }
 </style>

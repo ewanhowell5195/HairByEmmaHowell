@@ -1,8 +1,10 @@
 <script setup>
+  import FixedBackgroundWithText from "@c/sections/FixedBackgroundWithText.vue"
   import hairdressing from "@/assets/json/services/hairdressing.json"
   import bridalHair from "@/assets/json/services/bridal_hair.json"
   import ContentWithImage from "@c/sections/ContentWithImage.vue"
   import AboutSection from "@c/sections/About.vue"
+  import Gallery from "@c/sections/Gallery.vue"
   import Reviews from "@c/sections/Reviews.vue"
   import Banner from "@c/sections/Banner.vue"
   import home from "@/assets/json/home.json"
@@ -20,6 +22,7 @@
       <button @click="scrollToServices" class="white">View Services</button>
     </Banner>
     <AboutSection :link="true" />
+    <Gallery class="contrast" carousel :images="home.gallery_carousel.map(e => `/assets/images/home/gallery_carousel/${e}`)" />
     <div id="services">
       <h1 class="container">Services</h1>
       <hr>
@@ -35,6 +38,7 @@
         <router-link to="/services/bridalhair" class="button">Learn More</router-link>
       </ContentWithImage>
     </div>
+    <FixedBackgroundWithText :image="'/assets/images/home/' + home.fixed_background_image" :content="home.fixed_background_content" />
     <Reviews />
   </div>
 </template>
@@ -45,11 +49,11 @@
   }
 
   #services {
-    background-color: var(--color-background-primary);
+    background-color: var(--color-background);
 
     > h1 {
       text-align: center;
-      margin-bottom: 30px;
+      padding-bottom: 30px;
     }
   }
 </style>

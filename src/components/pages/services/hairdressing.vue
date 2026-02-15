@@ -25,7 +25,7 @@
       </div>
     </section>
     <Reviews service="hairdressing" />
-    <Gallery :images="service.gallery.map(e => `/assets/images/services/hairdressing/${e}`)" />
+    <Gallery title="Gallery" :images="service.gallery.map(e => `/assets/images/services/hairdressing/${e}`)" />
   </div>
 </template>
 

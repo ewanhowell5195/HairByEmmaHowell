@@ -92,7 +92,7 @@ export async function prepareImageChanges(dir, newImages, imageNames) {
   if (!res.ok) throw new Error("Failed to fetch directory contents")
 
   const files = await res.json()
-  const existingFiles = new Map(files.map(f => [f.name, f.sha]))
+  const existingFiles = new Map(files.filter(e => e.type === "file").map(f => [f.name, f.sha]))
 
   for (const [dataUrl, name] of newImages.entries()) {
     if (existingFiles.has(name)) {

@@ -15,7 +15,7 @@
   <section>
     <div class="container">
       <div class="location-map">
-        <iframe :src="src"></iframe>
+        <iframe :src="src" class="fade-in fade-in-static"></iframe>
       </div>
       <div class="location-content">
         <slot />
@@ -45,7 +45,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 24px;
     border: 0;
   }
 

@@ -29,7 +29,7 @@
       </div>
     </section>
     <Reviews service="bridal_hair" />
-    <Gallery :images="service.gallery.map(e => `/assets/images/services/bridal_hair/${e}`)" />
+    <Gallery title="Gallery" :images="service.gallery.map(e => `/assets/images/services/bridal_hair/${e}`)" />
   </div>
 </template>
 

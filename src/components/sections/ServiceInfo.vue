@@ -16,7 +16,9 @@
     const mainSplide = new Splide(splide.value, {
       autoWidth: true,
       arrows: true,
-      pagination: false
+      pagination: false,
+      flickPower: 75,
+      flickMaxPages: 0.3
     }).mount()
 
     const thumbnailSplide = new Splide(thumbnails.value, {
@@ -24,7 +26,9 @@
       arrows: false,
       pagination: false,
       isNavigation: true,
-      gap: 12
+      gap: 12,
+      flickPower: 75,
+      flickMaxPages: 0.3
     }).mount()
 
     mainSplide.sync(thumbnailSplide)
@@ -32,31 +36,33 @@
 </script>
 
 <template>
-  <section class="container">
-    <div id="service-info-left">
-      <div ref="splide" class="splide" id="service-info-carousel">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li v-for="image of service.images" class="splide__slide">
-              <img :src="`/assets/images/services/${service.id}/${image}`" :popupable="componentId" loading="lazy" />
-            </li>
-          </ul>
+  <section>
+    <div class="container">
+      <div id="service-info-left">
+        <div ref="splide" class="splide" id="service-info-carousel">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li v-for="image of service.images" class="splide__slide">
+                <img :src="`/assets/images/services/${service.id}/${image}`" :popupable="componentId" loading="lazy" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div ref="thumbnails" class="splide" id="service-info-thumbnails">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li v-for="image of service.images" class="splide__slide">
+                <img :src="`/assets/images/services/${service.id}/${image}`" loading="lazy" />
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div ref="thumbnails" class="splide" id="service-info-thumbnails">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li v-for="image of service.images" class="splide__slide">
-              <img :src="`/assets/images/services/${service.id}/${image}`" height="96" loading="lazy" />
-            </li>
-          </ul>
-        </div>
+      <div id="service-info-right">
+        <h1>{{ service.heading }}</h1>
+        <div v-html="service.description" />
+        <PriceList :pricelist="service.price_list" />
       </div>
-    </div>
-    <div id="service-info-right">
-      <h1>{{ service.heading }}</h1>
-      <div v-html="service.description" />
-      <PriceList :pricelist="service.price_list" />
     </div>
   </section>
 </template>
@@ -97,11 +103,22 @@
 
     .splide__slide {
       border: 2px solid transparent;
-      transition: border .15s ease;
+      transition: border .15s;
+      width: calc(100% / 6 - (12px * 5) / 6);
+
+      &:hover {
+        border: 2px solid #ccc;
+      }
 
       &.is-active {
         border: 2px solid #000;
       }
+    }
+
+    img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      width: 100%;
     }
   }
 
@@ -137,12 +154,16 @@
       position: initial;
     }
 
-    #service-info-thumbnails img {
-      height: 64px;
-    }
-
     #service-info-right {
       width: 100%;
+    }
+
+    #service-info-carousel .splide__slide img {
+      aspect-ratio: 1;
+    }
+
+    #service-info-thumbnails .splide__slide {
+      width: calc(100% / 5 - (12px * 4) / 5);
     }
   }
 </style>

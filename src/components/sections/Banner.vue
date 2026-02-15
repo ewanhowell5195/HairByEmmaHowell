@@ -12,12 +12,12 @@
 
 <template>
   <section :class="{ desktop: mobileimage }" :style="{ backgroundImage: `url(${image})` }">
-    <div class="banner-content container">
+    <div class="banner-content container fade-in">
       <slot></slot>
     </div>
   </section>
   <section v-if="mobileimage" class="mobile" :style="{ backgroundImage: `url(${mobileimage})` }">
-    <div class="banner-content container">
+    <div class="banner-content container fade-in">
       <slot></slot>
     </div>
   </section>

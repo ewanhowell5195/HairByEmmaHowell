@@ -103,7 +103,7 @@
     flex: 1 1 0px;
     aspect-ratio: 1 / 1;
     position: relative;
-    transition: box-shadow .15s ease;
+    transition: box-shadow .15s;
     min-width: calc(25% - 12px);
     max-width: calc(25% - 12px);
 

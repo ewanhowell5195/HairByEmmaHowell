@@ -129,7 +129,7 @@
 <style>
   [popupable] {
     cursor: pointer;
-    transition: box-shadow .15s ease;
+    transition: box-shadow .15s;
 
     &:hover {
       box-shadow: var(--box-shadow);
@@ -160,7 +160,7 @@
     max-height: calc(100dvh - 92px * 2);
     overflow: hidden;
     scale: .85;
-    transition: scale .15s ease;
+    transition: scale .15s;
   }
 
   .popup-visible {
@@ -198,7 +198,7 @@
     height: 60px;
     font-size: 40px;
     background-color: #0006;
-    transition: background-color .15s ease, box-shadow .15s ease;
+    transition: background-color .15s, box-shadow .15s;
     user-select: none;
 
     &:hover {
