@@ -140,7 +140,9 @@
                 <Image
                   v-for="(img, i) in review.images"
                   :key="i"
-                  :popupable="componentId + '-' + index"
+                  data-popupable
+                  :data-popupable-group="componentId + '-' + index"
+                  v-bind="review.images.length > 1 ? { 'data-popupable-thumbnails': '', 'data-popupable-counter': '' } : {}"
                   :src="'/assets/images/reviews/' + img"
                   alt="Review Image"
                   :delay="index * 300 + i * 150"

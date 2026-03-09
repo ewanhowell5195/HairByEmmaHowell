@@ -68,7 +68,7 @@
           <div class="splide__track">
             <ul class="splide__list">
               <li v-for="img of images" class="splide__slide">
-                <img :src="img" :popupable="componentId" loading="lazy" />
+                <img :src="img" data-popupable :data-popupable-group="componentId" data-popupable-thumbnails data-popupable-counter loading="lazy" />
               </li>
             </ul>
           </div>
@@ -83,7 +83,10 @@
               :src="src"
               class="image"
               :style="group.style"
-              :popupable="componentId"
+              data-popupable
+              :data-popupable-group="componentId"
+              data-popupable-thumbnails
+              data-popupable-counter
               :delay="j * 150"
             />
           </div>
@@ -96,7 +99,10 @@
               :src="src"
               class="image"
               :style="group.style"
-              :popupable="componentId"
+              data-popupable
+              :data-popupable-group="componentId + '-mobile'"
+              data-popupable-thumbnails
+              data-popupable-counter
               :delay="j * 150"
             />
           </div>

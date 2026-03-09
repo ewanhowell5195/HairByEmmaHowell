@@ -15,7 +15,7 @@
 <template>
   <section>
     <div class="container">
-      <Image :src="'/assets/images/about/' + about.image" popupable width="256" height="256" />
+      <Image :src="'/assets/images/about/' + about.image" data-popupable width="256" height="256" />
       <div class="content">
         <div v-html="about.intro" class="fade-in"></div>
         <router-link v-if="link" to="/about" class="button fade-in">Learn More</router-link>

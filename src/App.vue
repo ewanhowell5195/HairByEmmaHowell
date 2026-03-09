@@ -1,5 +1,4 @@
 <script setup>
-  import PopupViewer from "./components/sections/PopupViewer.vue"
   import Header from "./components/sections/Header.vue"
   import Footer from "./components/sections/Footer.vue"
   import { refreshFadeIns } from "@/js/fadeIn"
@@ -35,7 +34,6 @@
     </router-view>
   </div>
   <Footer />
-  <PopupViewer />
 </template>
 
 <style>

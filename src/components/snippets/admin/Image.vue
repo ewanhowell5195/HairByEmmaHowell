@@ -34,7 +34,7 @@
 <template>
   <label>{{ title }}</label>
   <div class="upload-image">
-    <img :popupable="Math.random()" :src="resolveUrl(modelValue)" />
+    <img data-popupable :src="resolveUrl(modelValue)" />
     <div class="upload-image-footer">
       <span class="icon" data-tooltip="Replace Image">
         <span>upload</span>

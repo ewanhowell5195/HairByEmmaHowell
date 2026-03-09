@@ -5,6 +5,8 @@ import router from "./router"
 import "./styles.css"
 import "easy-tooltips/styles.css"
 import "easy-tooltips"
+import "popupable/styles.css"
+import "popupable"
 
 const app = createApp(App)
 

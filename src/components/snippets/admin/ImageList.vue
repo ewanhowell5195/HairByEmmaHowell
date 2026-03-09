@@ -70,7 +70,7 @@
       ]"
     >
       <template v-if="images?.[i - 1]">
-        <img :src="resolveUrl(images[i - 1])" :popupable="componentId" />
+        <img :src="resolveUrl(images[i - 1])" data-popupable :data-popupable-group="componentId" data-popupable-thumbnails data-popupable-counter />
         <div class="image-list-footer">
           <span data-tooltip="Move Previous" class="icon" @click="moveImagePrev(i - 1)">keyboard_arrow_left</span>
           <span data-tooltip="Delete Image" class="icon" @click="deleteImage(i - 1)">delete</span>

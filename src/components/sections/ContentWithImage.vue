@@ -81,13 +81,13 @@
     <div class="container" :class="{ reverse: content === 'left' }">
       <h2 v-if="heading">{{ heading }}</h2>
       <div class="section-image">
-        <Image v-if="typeof image === 'string'" :src="image" popupable loading="lazy" />
-        <Image v-else-if="image.length === 1" :src="image[0]" popupable loading="lazy" />
+        <Image v-if="typeof image === 'string'" :src="image" data-popupable loading="lazy" />
+        <Image v-else-if="image.length === 1" :src="image[0]" data-popupable loading="lazy" />
         <div ref="splide" class="splide">
           <div class="splide__track">
             <ul class="splide__list">
               <li v-for="img of image" class="splide__slide">
-                <Image :src="img" :popupable="componentId" loading="lazy" />
+                <Image :src="img" data-popupable :data-popupable-group="componentId" data-popupable-thumbnails data-popupable-counter loading="lazy" />
               </li>
             </ul>
           </div>

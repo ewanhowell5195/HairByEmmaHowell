@@ -43,7 +43,7 @@
           <div class="splide__track">
             <ul class="splide__list">
               <li v-for="image of service.images" class="splide__slide">
-                <img :src="`/assets/images/services/${service.id}/${image}`" :popupable="componentId" loading="lazy" />
+                <img :src="`/assets/images/services/${service.id}/${image}`" data-popupable :data-popupable-group="componentId" data-popupable-thumbnails data-popupable-counter loading="lazy" />
               </li>
             </ul>
           </div>
