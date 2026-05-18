@@ -63,17 +63,8 @@
   }
 
   @media (max-width: 768px) {
-    section {
-      flex-direction: column !important;
-      align-items: center;
-
-      > * {
-        width: 100%;
-      }
-
-      > h1 {
-        display: initial;
-      }
+    .container {
+      flex-direction: column;
     }
 
     img {
@@ -81,11 +72,15 @@
       max-width: 200px;
       min-width: 200px;
       height: 200px;
-      order: 1;
     }
 
     .content {
       display: contents;
+    }
+
+    .more-content {
+      text-align: center;
+      margin-top: calc(-40px + 1lh);
     }
 
     .button {
