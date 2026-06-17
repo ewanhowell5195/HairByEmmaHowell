@@ -19,7 +19,7 @@
       "values": [
         {
           "name": "Brides hair on the day",
-          "price": "£120",
+          "price": "£130",
           "description": ""
         },
         {
@@ -61,6 +61,11 @@
           "name": "Second Look",
           "price": "£150",
           "description": "Enjoy a discreet, 'by-your-side' service through to your wedding breakfast, with my support for any touch-ups, adjustments after the ceremony, assistance during photos, and a second look before you make your entrance."
+        },
+        {
+          "name": "Sunday and Bank Holiday bookings",
+          "price": "£50",
+          "description": "Bookings that take place on a Sunday or Bank Holiday have an additional charge."
         }
       ]
     }
