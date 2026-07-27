@@ -16,51 +16,46 @@
       "values": [
         {
           "name": "Wash, cut and blow dry",
-          "price": "£40",
+          "price": "£50",
           "description": ""
         },
         {
           "name": "Wash and blow dry",
-          "price": "£30",
-          "description": ""
-        },
-        {
-          "name": "Full head of highlights/Balayage",
-          "price": "£95",
-          "description": ""
-        },
-        {
-          "name": "Half head of highlights/Balayage",
-          "price": "£70",
-          "description": ""
-        },
-        {
-          "name": "Partial highlights",
-          "price": "£50",
-          "description": ""
-        },
-        {
-          "name": "Root tint",
           "price": "£40",
           "description": ""
         },
         {
-          "name": "Root tint and refresh",
+          "name": "Full head of highlights/Balayage",
+          "price": "£105",
+          "description": ""
+        },
+        {
+          "name": "Half head of highlights/Balayage",
+          "price": "£80",
+          "description": ""
+        },
+        {
+          "name": "Partial highlights",
+          "price": "£60",
+          "description": ""
+        },
+        {
+          "name": "Root tint",
           "price": "£50",
+          "description": ""
+        },
+        {
+          "name": "Root tint and refresh",
+          "price": "£60",
           "description": ""
         },
         {
           "name": "Semi-permanent colour",
-          "price": "£50",
+          "price": "£60",
           "description": ""
         },
         {
           "name": "Toner",
-          "price": "£20",
-          "description": ""
-        },
-        {
-          "name": "Men’s cut",
           "price": "£25",
           "description": ""
         },
