@@ -13,6 +13,22 @@
   },
   {
     "service": "bridal_hair",
+    "heading": "Amazing",
+    "review": "I honestly couldn’t have asked for a better wedding hair stylist. From the moment Emma arrived, everything felt calm, organised, and genuinely enjoyable. She did such a beautiful job on my hair and it was exactly how I imagined and stayed perfect all day.\n\nEmma also styled my mum and sisters’ hair, and they all looked amazing. Everyone felt confident and looked their best.\n\nWhat really stood out was how supportive she was throughout the morning. She didn’t just do our hair and leave Emma stayed right until the end and even helped me get into my dress, which made such a difference during those final, slightly overwhelming moments.",
+    "name": "Louisa",
+    "date": "10/11/2026",
+    "images": []
+  },
+  {
+    "service": "bridal_hair",
+    "heading": "Loved my Hair",
+    "review": "Emma absolutely nailed it, my bridesmaids, mum and mother in law absolutely loved their hair and my hair was perfect! Emma really understood what I wanted and made everyone feel so relaxed on the day.",
+    "name": "Yasmin",
+    "date": "18/04/2026",
+    "images": []
+  },
+  {
+    "service": "bridal_hair",
     "heading": "Highly recommend",
     "review": "Emma styled my hair and 3 bridesmaids for my wedding. She was so lovely, really calm and organised with a schedule ready for the morning.\nEmma did two lovely french twists, a half updo with curls and a low bun, which all stayed in place til the very end!\nI would highly recommend Emma's services - she was so helpful, used lovely high-quality products and had the most competitive prices of all suppliers I have seen.\nThank you Emma for making us all feel like princesses for a day! X",
     "name": "Becky",
@@ -120,5 +136,13 @@
       "284d0fd57c5c9a300bafc07e4d52c784.jpg",
       "8c43dc96587ac7d179e442d1013de391.jpg"
     ]
+  },
+  {
+    "service": "hairdressing",
+    "heading": "New Review",
+    "review": "This is a new review.",
+    "name": "Name",
+    "date": "//10/11/2026",
+    "images": []
   }
 ]
